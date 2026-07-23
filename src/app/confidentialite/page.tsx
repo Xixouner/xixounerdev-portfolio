@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Politique de confidentialité | XixounerDev",
-  description: "Politique de confidentialité du site XixounerDev.",
+  title: "Politique de confidentialité | XixounerDev — Développeur Web Freelance",
+  description:
+    "Politique de confidentialité du site XixounerDev. Données collectées via formulaire de devis : nom, email, projet, budget. Conforme RGPD. Aucun cookie tracking.",
+  robots: { index: true, follow: true },
 };
 
 export default function Confidentialite() {

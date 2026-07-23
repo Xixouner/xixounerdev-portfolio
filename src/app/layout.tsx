@@ -77,6 +77,9 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="fr" className={`${geistSans.variable} ${geistMono.variable}`}>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="preconnect" href="//fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="manifest" href="/manifest.json" />
       <body>
         <script
           type="application/ld+json"
@@ -84,12 +87,18 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
+              "@id": "https://xixouner.com/#org",
               name: "XixounerDev",
               description:
                 "Développeur web freelance à Clermont-Ferrand. Création de sites sur-mesure pas chers, rapides et sécurisés. Fullstack & DevOps.",
               url: "https://xixouner.com",
               areaServed: "Clermont-Ferrand, Auvergne, France",
               priceRange: "€€",
+              sameAs: [
+                "https://www.malt.fr/profile/alexistrechot?overview",
+                "https://www.linkedin.com/in/alexis-trechot-7b33b1280",
+                "https://github.com/Xixouner",
+              ],
               founder: {
                 "@type": "Person",
                 name: "Alexis Trechot",
@@ -102,6 +111,79 @@ export default function RootLayout({
                 "Hébergement web",
                 "DevOps & Dockerisation",
               ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              "@id": "https://xixouner.com/#local",
+              name: "XixounerDev",
+              image: "https://xixouner.com/photo_pro.jpg",
+              url: "https://xixouner.com",
+              priceRange: "€€",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Clermont-Ferrand",
+                addressRegion: "Auvergne",
+                addressCountry: "FR",
+              },
+              sameAs: [
+                "https://www.malt.fr/profile/alexistrechot?overview",
+                "https://www.linkedin.com/in/alexis-trechot-7b33b1280",
+                "https://github.com/Xixouner",
+              ],
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                opens: "09:00",
+                closes: "18:00",
+              },
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "@id": "https://xixouner.com/#website",
+              url: "https://xixouner.com",
+              name: "XixounerDev",
+              description:
+                "Développeur web freelance. Sites sur-mesure pas chers, rapides, sécurisés.",
+              inLanguage: "fr",
+              publisher: { "@id": "https://xixouner.com/#org" },
+              mainEntity: {
+                "@type": "ItemList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Création de site web",
+                    description: "À partir de 500 € HT.",
+                    url: "https://xixouner.com/#services",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "Outils sur-mesure & Productivité",
+                    description: "À partir de 500 € HT.",
+                    url: "https://xixouner.com/#services",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Hébergement & DevOps",
+                    description: "À partir de 5 € / mois.",
+                    url: "https://xixouner.com/#services",
+                  },
+                ],
+              },
             }),
           }}
         />

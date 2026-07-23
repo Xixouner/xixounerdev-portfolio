@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Mentions légales | XixounerDev",
-  description: "Mentions légales du site XixounerDev — Alexis Trechot, entrepreneur individuel.",
+  title: "Mentions légales | XixounerDev — Développeur Web Freelance Clermont-Ferrand",
+  description:
+    "Mentions légales du site XixounerDev — Alexis Trechot, entrepreneur individuel, développeur web freelance à Clermont-Ferrand. SIRET 999 699 101 00013.",
+  robots: { index: true, follow: true },
 };
 
 export default function MentionsLegales() {
