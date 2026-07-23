@@ -1,21 +1,22 @@
 # XixounerDev — Alexis Trechot
 
 ## À propos
-Développeur Fullstack & DevOps freelance basé à Clermont-Ferrand.
-Spécialisé en création de sites web sur-mesure, Dockerisation, hébergement VPS et CI/CD.
+Développeur web freelance & DevOps basé à Clermont-Ferrand.
+Création de sites sur-mesure pas chers et rapides, hébergement pro, outils de productivité.
 
 ## Pages
-- [Accueil](https://xixouner.com): Portfolio one-page avec toutes les prestations
+- [Accueil](https://xixouner.com): Portfolio one-page — services, réalisations, formulaire de devis gratuit
 - [Mentions légales](https://xixouner.com/mentions-legales)
 - [Politique de confidentialité](https://xixouner.com/confidentialite)
 
 ## Services
-- Création de site web sur-mesure (à partir de 1 500 € HT)
-- Dockerisation & DevOps (à partir de 800 € HT)
-- Refonte & Mise en ligne (à partir de 900 € HT)
+- Création de site web sur-mesure — à partir de 500 € HT
+- Outils sur-mesure & Productivité — à partir de 500 € HT
+- Hébergement & DevOps — à partir de 5 € / mois
 
 ## Contact
 - Email: alexistrechot@gmail.com
 - Malt: https://www.malt.fr/profile/alexistrechot?overview
 - LinkedIn: https://www.linkedin.com/in/alexis-trechot-7b33b1280
 - GitHub: https://github.com/Xixouner
+- Devis gratuit: https://xixouner.com/#contact
