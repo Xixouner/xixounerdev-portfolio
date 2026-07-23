@@ -1,0 +1,12 @@
+node_modules
+.git
+.gitignore
+.next
+.env
+.env.local
+.env.production
+Dockerfile*
+docker-compose*
+README.md
+*.md
+.tmp-agent-scratch

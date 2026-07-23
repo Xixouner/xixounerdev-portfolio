@@ -1,0 +1,8 @@
+node_modules/
+.next/
+.env
+.env.local
+.env.production
+.tmp-agent-scratch/
+photo_pro.jpg
+photo_pro.jpg
