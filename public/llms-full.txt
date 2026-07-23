@@ -1,0 +1,93 @@
+# XixounerDev — Alexis Trechot | Développeur Web Freelance Pas Cher & Rapide
+
+## Accueil — https://xixouner.com
+
+### Hero
+**Titre** : Un site qui vend, pas juste un site qui existe.
+
+**Sous-titre** : Je suis développeur web freelance, pas cher et rapide. Je crée des sites sur-mesure qui chargent en moins d'une seconde, passent premier sur Google et tiennent la charge. Développement + Hébergement : un seul interlocuteur, zéro casse-tête.
+
+**CTAs** : Demander mon devis gratuit | Voir mes réalisations
+
+**Réassurances** : Sans engagement | Réponse en moins de 24h | Devis transparent
+
+---
+
+### Pourquoi travailler ensemble ?
+
+Un freelance qui vous fait un joli site, vous en trouvez dix. Un freelance qui le développe, le sécurise et l'héberge comme un pro : vous venez d'en trouver un.
+
+La vérité ? Un site mal hébergé, c'est un site invisible. Mal sécurisé, c'est une bombe à retardement. Mal optimisé, c'est un client perdu toutes les 3 secondes de chargement. Moi, je m'occupe de tout. Du code au serveur. Vous, vous vous occupez de votre business.
+
+**Mes 4 engagements** :
+1. Pas de template, pas de bullshit — chaque projet part d'une feuille blanche. Votre charte, votre identité, vos objectifs.
+2. Votre site charge en moins d'une seconde — SEO au top, score Lighthouse > 95.
+3. Sécurité pro, tranquillité totale — SSL, pare-feu, sauvegardes automatiques, mises à jour.
+4. Hébergement qui encaisse tout — serveurs pros Hetzner, Docker, monitorés 24/7.
+
+---
+
+### Réalisations — Les Acacias
+
+**Étude de cas** : Les Acacias — Site vitrine pour une association d'aide aux seniors.
+
+**Contexte** : Un site vieillissant, illisible, invisible sur Google. L'association perdait des familles.
+
+**Solution** :
+- Refonte complète avec design sur-mesure et accessible
+- Développement Next.js optimisé pour la performance
+- Hébergement VPS Hetzner avec Docker et sauvegardes
+- Certificat SSL automatique et monitoring 24/7
+
+**Résultats** :
+- Performance Lighthouse : 98/100
+- Score SEO : 100/100
+- Incidents depuis mise en ligne : 0
+- Responsive : 100%
+- Temps de chargement : < 0.8s
+
+**Lien** : https://lesacacias.org
+
+---
+
+### Services & Tarifs Indicatifs
+
+Chaque projet est unique. Les prix ci-dessous sont indicatifs — seul un devis détaillé après échange permet de déterminer le tarif exact.
+
+1. **Création de site web — À partir de 500 € HT**
+   - Site vitrine, corporate ou associatif
+   - Design responsive sur-mesure
+   - SEO optimisé, performance max
+   - Formation à la prise en main
+   - 1 mois de suivi offert
+
+2. **Outils sur-mesure & Productivité — À partir de 500 € HT**
+   - Applications web pour automatiser vos process
+   - Dashboards, CRM léger, outils internes
+   - Gain de temps immédiat pour vos équipes
+   - Solution adaptée à votre métier
+   - Interface simple, zéro bloat
+
+3. **Hébergement & DevOps — À partir de 5 € / mois**
+   - Hébergement pro dès 5 € / mois
+   - Sites vitrine, e-commerce, applicatifs
+   - Scalable selon votre trafic
+   - Dockerisation, CI/CD, monitoring
+   - Sécurité, SSL, backups automatiques
+
+Les prix exacts dépendent de votre besoin. Un devis personnalisé et transparent vous sera envoyé après notre premier échange. Le premier appel est gratuit. Toujours.
+
+---
+
+### Formulaire — Demander un devis gratuit
+
+Vous avez un projet. J'ai les compétences pour le réaliser. Décrivez-moi votre besoin en 2 minutes.
+
+**Processus** :
+1. Vous remplissez le formulaire (2 min)
+2. Je vous réponds par email sous 24h
+3. On échange par téléphone si nécessaire
+4. Je vous envoie un devis gratuit et détaillé
+5. On se met d'accord, je commence
+
+**À propos** : Alexis Trechot — Développeur web freelance à Clermont-Ferrand, entrepreneur individuel. SIRET : 999 699 101 00013. Email : alexistrechot@gmail.com. Malt : https://www.malt.fr/profile/alexistrechot?overview. LinkedIn : https://www.linkedin.com/in/alexis-trechot-7b33b1280. GitHub : https://github.com/Xixouner.

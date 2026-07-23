@@ -9,7 +9,31 @@ export const metadata = {
 
 export default function MentionsLegales() {
   return (
-    <main className="mx-auto max-w-3xl px-6 py-24">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Accueil",
+                item: "https://xixouner.com",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Mentions légales",
+                item: "https://xixouner.com/mentions-legales",
+              },
+            ],
+          }),
+        }}
+      />
+      <main className="mx-auto max-w-3xl px-6 py-24">
       <h1 className="mb-8 text-3xl font-bold text-primary">Mentions légales</h1>
 
       <section className="space-y-6 text-text-light">
@@ -50,5 +74,6 @@ export default function MentionsLegales() {
         ← Retour à l&apos;accueil
       </Link>
     </main>
+    </>
   );
 }
