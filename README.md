@@ -42,26 +42,20 @@ npm run dev
 ### Setup initial (première fois)
 
 ```bash
-# 1. Uploader le script sur le VPS
-scp setup.sh user@vps:/var/www/projects/
-
-# 2. Sur le VPS
-cd /var/www/projects
-chmod +x setup.sh
+# 1. Cloner le repo et lancer
+git clone git@github.com:Xixouner/xixounerdev-portfolio.git
+cd xixounerdev-portfolio
 ./setup.sh
 
-# 3. Éditer le .env avec la vraie clé Resend
-cd xixounerdev-portfolio
+# 2. Éditer .env avec la vraie clé Resend (optionnel)
 nano .env
-
-# 4. Redémarrer avec la nouvelle config
 docker compose up -d
 ```
 
 ### Mise à jour
 
 ```bash
-cd /var/www/projects/xixounerdev-portfolio
+cd xixounerdev-portfolio
 ./deploy.sh
 ```
 

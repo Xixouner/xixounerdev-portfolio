@@ -3,23 +3,13 @@ set -e
 
 # ============================================
 # Setup initial — À lancer UNE fois sur le VPS
+# Usage : ./setup.sh
 # ============================================
 
-PROJECT_DIR="/var/www/projects/xixounerdev-portfolio"
-REPO="git@github.com:Xixouner/xixounerdev-portfolio.git"
+PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 echo "=== Setup XixounerDev Portfolio ==="
-
-# 1. Cloner le projet
-if [ -d "$PROJECT_DIR" ]; then
-  echo "[✓] Le dossier existe déjà, on skip le clone."
-else
-  mkdir -p /var/www/projects
-  cd /var/www/projects
-  git clone "$REPO"
-fi
-
-cd "$PROJECT_DIR"
+echo "→ Dossier : $PROJECT_DIR"
 
 # 2. Fichier .env
 if [ ! -f ".env" ]; then

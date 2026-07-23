@@ -3,10 +3,10 @@ set -e
 
 # ============================================
 # Deploy / Update — Rebuild après git pull
+# Usage : ./deploy.sh
 # ============================================
 
-PROJECT_DIR="/var/www/projects/xixounerdev-portfolio"
-
+PROJECT_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$PROJECT_DIR"
 
 echo "=== Mise à jour XixounerDev Portfolio ==="
