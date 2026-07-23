@@ -37,40 +37,32 @@ npm run dev
 
 - Docker 29+
 - Docker Compose
-- Le réseau Docker `xixouner-infra` doit exister
+- Ubuntu 26.04 (ou équivalent)
 
-### Créer le réseau (une seule fois)
-
-```bash
-docker network create xixouner-infra --subnet 172.18.0.0/16
-```
-
-### Déployer
+### Setup initial (première fois)
 
 ```bash
-# 1. Cloner le repo sur le serveur
+# 1. Uploader le script sur le VPS
+scp setup.sh user@vps:/var/www/projects/
+
+# 2. Sur le VPS
 cd /var/www/projects
-git clone git@github.com:Xixouner/xixounerdev-portfolio.git
+chmod +x setup.sh
+./setup.sh
+
+# 3. Éditer le .env avec la vraie clé Resend
 cd xixounerdev-portfolio
+nano .env
 
-# 2. Configurer l'environnement
-cp .env.example .env
-# Éditer .env avec les vraies valeurs (RESEND_API_KEY, etc.)
-
-# 3. Build & start
-docker compose up -d --build
-
-# 4. Vérifier
-curl -s -o /dev/null -w '%{http_code}' http://localhost:3000
-# → 200
+# 4. Redémarrer avec la nouvelle config
+docker compose up -d
 ```
 
 ### Mise à jour
 
 ```bash
 cd /var/www/projects/xixounerdev-portfolio
-git pull
-docker compose up -d --build
+./deploy.sh
 ```
 
 ### Logs & diagnostic
