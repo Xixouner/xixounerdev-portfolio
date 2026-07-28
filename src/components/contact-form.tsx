@@ -143,43 +143,12 @@ export function ContactForm() {
               <input {...register("email")} type="email" placeholder="marie@entreprise.fr" className={inputClass} />
               {errors.email?.message && <p className="mt-1 text-xs text-red-500" role="alert">{errors.email.message}</p>}
             </label>
-            <label className="block">
-              <span className="mb-1.5 block text-sm font-medium text-text">Téléphone</span>
-              <input {...register("phone")} type="tel" placeholder="06 12 34 56 78" className={inputClass} />
-            </label>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            <label className="block">
-              <span className="mb-1.5 block text-sm font-medium text-text">Type de projet *</span>
-              <select {...register("projectType")} className={inputClass}>
-                <option value="">— Choisissez —</option>
-                {contactData.projectTypes.map((t) => <option key={t} value={t}>{t}</option>)}
-              </select>
-              {errors.projectType?.message && <p className="mt-1 text-xs text-red-500" role="alert">{errors.projectType.message}</p>}
-            </label>
-            <label className="block">
-              <span className="mb-1.5 block text-sm font-medium text-text">Budget estimé *</span>
-              <select {...register("budget")} className={inputClass}>
-                <option value="">— Choisissez —</option>
-                {contactData.budgets.map((b) => <option key={b} value={b}>{b}</option>)}
-              </select>
-              {errors.budget?.message && <p className="mt-1 text-xs text-red-500" role="alert">{errors.budget.message}</p>}
-            </label>
           </div>
 
           <label className="block">
             <span className="mb-1.5 block text-sm font-medium text-text">Parlez-moi de votre projet *</span>
-            <textarea {...register("description")} rows={5} placeholder="Qui êtes-vous ? Quels sont vos objectifs ?" className={inputClass} />
+            <textarea {...register("description")} rows={4} placeholder="Decrivez votre projet en quelques mots..." className={inputClass} />
             {errors.description?.message && <p className="mt-1 text-xs text-red-500" role="alert">{errors.description.message}</p>}
-          </label>
-
-          <label className="block">
-            <span className="mb-1.5 block text-sm font-medium text-text">Comment m&apos;avez-vous trouvé ?</span>
-            <select {...register("source")} className={inputClass}>
-              <option value="">— Choisissez —</option>
-              {contactData.sources.map((s) => <option key={s} value={s}>{s}</option>)}
-            </select>
           </label>
 
           {error && <p className="rounded-lg bg-red-50 p-3 text-sm text-red-600">{error}</p>}
