@@ -108,6 +108,13 @@ describe("Données du site", () => {
       }
     });
 
+    it("les liens Réalisations et Services pointent vers des pages dédiées", () => {
+      const realisations = navLinks.find((l) => l.label === "Réalisations");
+      const services = navLinks.find((l) => l.label === "Services");
+      expect(realisations?.href).toBe("/realisations");
+      expect(services?.href).toBe("/services");
+    });
+
     it("chaque lien a un label non vide", () => {
       for (const link of navLinks) {
         expect(link.label.length).toBeGreaterThan(0);

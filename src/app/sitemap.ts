@@ -13,6 +13,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: "https://xixouner.com/realisations",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://xixouner.com/services",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://xixouner.com/blog",
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://xixouner.com/mentions-legales",
       lastModified: new Date("2026-07-23"),
       changeFrequency: "yearly",
@@ -23,12 +41,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date("2026-07-23"),
       changeFrequency: "yearly",
       priority: 0.3,
-    },
-    {
-      url: "https://xixouner.com/blog",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
     },
   ];
 
