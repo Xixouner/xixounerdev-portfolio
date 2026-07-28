@@ -26,6 +26,7 @@ const validBody = {
   budget: "1 500 € – 3 000 €",
   description: "Je souhaite un site vitrine moderne pour mon activité.",
   source: "Malt",
+  rgpdConsent: true as const,
 };
 
 describe("POST /api/contact", () => {

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Send, Loader2, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
 import { Button } from "~/ui/primitives/button";
 import { contactData } from "~/lib/data-contact";
 import { Reveal } from "~/components/scroll-reveal";
@@ -17,6 +18,9 @@ const formSchema = z.object({
   budget: z.string().min(1, "Choisissez une fourchette"),
   description: z.string().min(10, "Décrivez votre projet (min 10 caractères)"),
   source: z.string().optional(),
+  rgpdConsent: z.literal(true, {
+    errorMap: () => ({ message: "Vous devez accepter la politique de confidentialité." }),
+  }),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -41,15 +45,21 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error("Erreur lors de l'envoi");
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Erreur lors de l'envoi");
+      }
       // Tracking Matomo : devis demandé
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       if (typeof window !== 'undefined' && (window as any)._paq) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any)._paq.push(['trackGoal', 1]);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any)._paq.push(['trackEvent', 'Contact', 'Formulaire soumis', data.projectType]);
       }
       setSent(true);
-    } catch {
-      setError("Une erreur est survenue. Réessayez ou envoyez-moi un email directement à alexistrechot@gmail.com");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Erreur lors de l'envoi");
     }
   }
 
@@ -108,6 +118,20 @@ export function ContactForm() {
           className="mx-auto max-w-2xl space-y-6 rounded-3xl border border-border bg-white p-8 shadow-sm sm:p-10"
           noValidate
         >
+          {/* Honeypot anti-spam — invisible pour l'humain, rempli par les bots */}
+          <div className="absolute opacity-0 pointer-events-none" style={{ height: 0, width: 0, overflow: "hidden" }} aria-hidden="true">
+            <label>
+              Laissez ce champ vide
+              <input
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                {...register("website" as any)}
+              />
+            </label>
+          </div>
+
           <div className="grid gap-6 sm:grid-cols-2">
             <label className="block">
               <span className="mb-1.5 block text-sm font-medium text-text">Nom & Prénom *</span>
@@ -160,11 +184,26 @@ export function ContactForm() {
 
           {error && <p className="rounded-lg bg-red-50 p-3 text-sm text-red-600">{error}</p>}
 
+          {/* RGPD consent */}
+          <label className="flex items-start gap-3 cursor-pointer rounded-xl border border-border p-4 transition-colors hover:border-accent/30">
+            <input
+              type="checkbox"
+              {...register("rgpdConsent")}
+              className="mt-0.5 h-4 w-4 shrink-0 rounded border-border accent-accent"
+            />
+            <span className="text-sm text-text-light">
+              J&apos;accepte que mes données soient collectées pour traiter ma demande de devis, conformément à la{" "}
+              <Link href="/confidentialite" className="text-accent underline underline-offset-2 hover:text-accent-light" target="_blank">
+                politique de confidentialité
+              </Link>
+              . <span className="text-text-muted">(Obligatoire)</span>
+            </span>
+          </label>
+          {errors.rgpdConsent?.message && <p className="mt-1 text-xs text-red-500" role="alert">{errors.rgpdConsent.message}</p>}
+
           <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? <><Loader2 size={16} className="animate-spin" /> Envoi en cours…</> : <><Send size={16} /> Recevoir mon devis gratuit</>}
           </Button>
-
-          <p className="text-center text-xs text-text-muted">{contactData.rgpd}</p>
         </form>
         </Reveal>
       </div>

@@ -10,6 +10,9 @@ const formSchema = z.object({
   budget: z.string().min(1, "Choisissez une fourchette"),
   description: z.string().min(10, "Décrivez votre projet (min 10 caractères)"),
   source: z.string().optional(),
+  rgpdConsent: z.literal(true, {
+    errorMap: () => ({ message: "Vous devez accepter la politique de confidentialité." }),
+  }),
 });
 
 const validData = {
@@ -18,6 +21,7 @@ const validData = {
   projectType: "Création d'un site web",
   budget: "1 500 € – 3 000 €",
   description: "Je souhaite un site vitrine pour mon cabinet.",
+  rgpdConsent: true as const,
 };
 
 describe("Formulaire de devis — validation Zod", () => {
@@ -95,7 +99,7 @@ describe("Formulaire de devis — validation Zod", () => {
     const result = formSchema.safeParse({});
     expect(result.success).toBe(false);
     if (!result.success) {
-      expect(result.error.issues.length).toBeGreaterThanOrEqual(5);
+      expect(result.error.issues.length).toBeGreaterThanOrEqual(6);
     }
   });
 
