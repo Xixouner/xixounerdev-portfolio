@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "~/ui/primitives/button";
 import { navLinks } from "~/lib/data-contact";
@@ -12,12 +13,12 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/40 bg-surface/80 backdrop-blur-lg supports-[backdrop-filter]:bg-surface/60">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a
-          href="#hero"
+        <Link
+          href="/"
           className="text-xl font-bold tracking-tight text-primary"
         >
           Xixouner<span className="text-accent">Dev</span>
-        </a>
+        </Link>
 
         {/* Desktop */}
         <ul className="hidden items-center gap-8 md:flex">
@@ -33,7 +34,7 @@ export function Header() {
           ))}
           <li>
             <Button size="sm" asChild>
-              <a href="#contact">Devis gratuit</a>
+              <a href="/#contact">Devis gratuit</a>
             </Button>
           </li>
         </ul>
@@ -69,7 +70,7 @@ export function Header() {
           ))}
           <li className="pt-2">
             <Button className="w-full" size="sm" asChild>
-              <a href="#contact" onClick={() => setOpen(false)}>
+              <a href="/#contact" onClick={() => setOpen(false)}>
                 Devis gratuit
               </a>
             </Button>

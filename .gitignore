@@ -6,3 +6,4 @@ node_modules/
 .tmp-agent-scratch/
 photo_pro.jpg
 photo_pro.jpg
+tsconfig.tsbuildinfo

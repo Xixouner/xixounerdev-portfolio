@@ -45,9 +45,9 @@ export const footerData = {
 } as const;
 
 export const navLinks = [
-  { label: "Accueil", href: "#hero" },
+  { label: "Accueil", href: "/#hero" },
   { label: "Blog", href: "/blog" },
-  { label: "Réalisations", href: "#portfolio" },
-  { label: "Services", href: "#services" },
-  { label: "Devis gratuit", href: "#contact" },
+  { label: "Réalisations", href: "/#portfolio" },
+  { label: "Services", href: "/#services" },
+  { label: "Devis gratuit", href: "/#contact" },
 ] as const;

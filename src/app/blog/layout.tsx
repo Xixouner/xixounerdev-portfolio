@@ -63,9 +63,9 @@ export default function BlogLayout({
           }),
         }}
       />
-      <div className="min-h-screen pt-24 pb-20">
+      <main className="min-h-[60vh] pt-24 pb-20">
         <div className="mx-auto max-w-6xl px-6">{children}</div>
-      </div>
+      </main>
     </>
   );
 }
