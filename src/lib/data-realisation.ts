@@ -36,11 +36,6 @@ export const realisations: Realisation[] = [
       { label: "Temps de chargement", value: "< 0.8s" },
       { label: "Incidents", value: "0 depuis lancement" },
     ],
-    testimonial: {
-      text: "Alexis a refait notre site en un temps record. Il est rapide, facile à utiliser pour nos bénéficiaires, et on apparaît enfin dans Google. On reçoit des demandes toutes les semaines.",
-      author: "La présidente",
-      role: "Les Acacias",
-    },
     url: "https://lesacacias.org",
   },
   {
