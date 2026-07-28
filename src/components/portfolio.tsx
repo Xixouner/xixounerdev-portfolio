@@ -72,11 +72,17 @@ export function Portfolio() {
                       ))}
                     </div>
                   </RevealStagger>
-                  <Button className="mt-4 w-full" variant="secondary" size="sm" asChild>
-                    <a href={project.url} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink size={14} />Voir le site
-                    </a>
-                  </Button>
+                  {"url" in project && project.url ? (
+                    <Button className="mt-4 w-full" variant="secondary" size="sm" asChild>
+                      <a href={project.url} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink size={14} />Voir le site
+                      </a>
+                    </Button>
+                  ) : (
+                    <div className="mt-4 rounded-lg bg-white/10 py-2 text-center text-xs text-text-muted">
+                      🔒 Usage interne
+                    </div>
+                  )}
                 </div>
               </article>
             </Reveal>

@@ -110,7 +110,6 @@ export const siteData = {
           { label: "Pages analysées", value: "Top 10" },
           { label: "Refresh", value: "60s" },
         ],
-        url: "https://status.xixouner.com",
       },
     ],
     placeholder: {
@@ -128,7 +127,7 @@ export const siteData = {
         { icon: "refresh", label: "CI/CD", detail: "Webhook GitHub → rebuild auto du container" },
         { icon: "zap", label: "Monitoring", detail: "Script bash + crontab 5 min, alerte Telegram si down" },
         { icon: "lock", label: "Backups", detail: "MariaDB + PostgreSQL + Redis, rotation 7 jours" },
-        { icon: "monitor", label: "Dashboard", detail: "status.xixouner.com, tout en un coup d'œil" },
+        { icon: "monitor", label: "Dashboard", detail: "Tableau de bord interne, tout en un coup d'œil" },
         { icon: "globe", label: "Resend", detail: "API email pour les formulaires de contact" },
         { icon: "monitor", label: "Hetzner VPS", detail: "7 Go RAM, 38 Go SSD" },
       ],

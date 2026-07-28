@@ -48,7 +48,15 @@ describe("Données du site", () => {
         expect(project.context.length).toBeGreaterThan(0);
         expect(project.solution.length).toBeGreaterThan(0);
         expect(project.results.length).toBeGreaterThan(0);
+      }
+    });
+
+    it("les projets publics ont une URL valide", () => {
+      const publicProjects = siteData.portfolio.projects.filter((p) => p.url);
+      expect(publicProjects.length).toBeGreaterThanOrEqual(2);
+      for (const project of publicProjects) {
         expect(project.url).toBeTruthy();
+        expect(project.url).toMatch(/^https?:\/\//);
       }
     });
 

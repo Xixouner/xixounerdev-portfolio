@@ -89,7 +89,7 @@ export const realisations: Realisation[] = [
       { label: "CI/CD", value: "Tracké en direct" },
       { label: "Alertes", value: "Telegram si down" },
     ],
-    url: "https://status.xixouner.com",
+    url: undefined,
   },
   {
     slug: "crm-xixouner",
