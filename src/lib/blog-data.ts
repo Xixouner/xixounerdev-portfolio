@@ -54,7 +54,7 @@ export const categoryDirMap: Record<BlogPostFrontmatter["category"], string> = {
   "dev-web": "dev-web",
 };
 
-export const POSTS_PER_PAGE = 6;
+export const POSTS_PER_PAGE = 12;
 
 export const author = {
   name: "Alexis Trechot",
