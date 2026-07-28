@@ -256,28 +256,27 @@ export default function RootLayout({
           }}
         />
 
-        {/* WhatsApp flottant */}
+        {/* WhatsApp flottant + pop-up devis */}
         <script dangerouslySetInnerHTML={{__html: `
+          // WhatsApp
           var wa = document.createElement("a");
           wa.href = "https://wa.me/3361423948";
           wa.target = "_blank";
-          wa.style.cssText = "position:fixed;bottom:20px;right:20px;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.25);z-index:9999;transition:transform 0.2s;";
-          wa.innerHTML = '<svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M12 2C6.477 2 2 6.477 2 12c0 2.05.65 3.948 1.764 5.512L3 22l4.488-.764A9.988 9.988 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18c-1.573 0-3.048-.468-4.29-1.268l-.308-.194-3.118.53.53-3.118-.194-.308A7.966 7.966 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/><path d="M16.515 13.43c-.211-.105-1.253-.618-1.447-.689-.194-.07-.335-.105-.476.105-.141.211-.545.689-.668.83-.123.141-.247.158-.458.053-.211-.106-.884-.326-1.684-1.04-.622-.556-1.042-1.24-1.164-1.45-.123-.211-.013-.326.092-.431.094-.094.211-.247.317-.37.106-.124.141-.212.212-.353.07-.141.035-.264-.018-.37-.053-.106-.476-1.148-.653-1.572-.172-.411-.346-.355-.476-.353l-.407-.006c-.141 0-.37.053-.564.264-.194.212-.741.724-.741 1.765s.759 2.047.865 2.188c.106.141 1.5 2.282 3.63 3.141.507.205.901.328 1.21.423.51.16.974.137 1.323.083.405-.063 1.253-.512 1.429-1.006.176-.494.176-.918.123-1.006-.053-.089-.194-.141-.405-.247z"/></svg>';
-          wa.onmouseenter = () => wa.style.transform = "scale(1.1)";
-          wa.onmouseleave = () => wa.style.transform = "scale(1)";
+          wa.style.cssText = "position:fixed;bottom:20px;right:20px;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,0.25);z-index:9999;";
+          wa.innerHTML = "<svg viewBox='0 0 24 24' width='28' height='28' fill='white'><path d='M12 2C6.477 2 2 6.477 2 12c0 2.05.65 3.948 1.764 5.512L3 22l4.488-.764A9.988 9.988 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z'/><path d='M16.515 13.43c-.211-.105-1.253-.618-1.447-.689-.194-.07-.335-.105-.476.105-.141.211-.545.689-.668.83-.123.141-.247.158-.458.053-.211-.106-.884-.326-1.684-1.04-.622-.556-1.042-1.24-1.164-1.45-.123-.211-.013-.326.092-.431.094-.094.211-.247.317-.37.106-.124.141-.212.212-.353.07-.141.035-.264-.018-.37-.053-.106-.476-1.148-.653-1.572-.172-.411-.346-.355-.476-.353l-.407-.006c-.141 0-.37.053-.564.264-.194.212-.741.724-.741 1.765s.759 2.047.865 2.188c.106.141 1.5 2.282 3.63 3.141.507.205.901.328 1.21.423.51.16.974.137 1.323.083.405-.063 1.253-.512 1.429-1.006.176-.494.176-.918.123-1.006-.053-.089-.194-.141-.405-.247z'/></svg>";
+          wa.onclick = function() {
+            var p = window._paq || []; p.push(["trackEvent", "Contact", "WhatsApp"]);
+          };
           document.body.appendChild(wa);
-        `}} />
 
-        {/* Pop-up devis gratuit après 30s */}
-        <script dangerouslySetInnerHTML={{__html: `
+          // Pop-up devis apres 30s
           setTimeout(function() {
-            var shown = localStorage.getItem("popupShown");
-            if (shown) return;
-            var overlay = document.createElement("div");
-            overlay.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99998;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);";
-            overlay.innerHTML = '<div style="background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:20px;padding:40px;max-width:420px;width:90%;text-align:center;"><h2 style="color:#818cf8;font-size:22px;margin-bottom:8px;">Besoin d\'un site web ?</h2><p style="color:#94a3b8;font-size:14px;line-height:1.6;margin-bottom:20px;">Je crée des sites modernes, rapides et securises a partir de 500€</p><a href="#contact" style="display:inline-block;background:#818cf8;color:#0f172a;padding:12px 28px;border-radius:10px;font-weight:600;text-decoration:none;" onclick="localStorage.setItem(\'popupShown\',\'1\');this.closest(\'div\').parentElement.remove();">Devis gratuit</a><button onclick="localStorage.setItem(\'popupShown\',\'1\');this.closest(\'div\').parentElement.remove();" style="display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:12px;cursor:pointer;">Non merci</button></div>';
-            overlay.onclick = function(e) { if (e.target === overlay) { localStorage.setItem("popupShown","1"); overlay.remove(); } };
-            document.body.appendChild(overlay);
+            if (localStorage.getItem("popupShown")) return;
+            var o = document.createElement("div");
+            o.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99998;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);";
+            o.innerHTML = "<div style='background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:20px;padding:40px;max-width:420px;width:90%;text-align:center;'><h2 style='color:#818cf8;font-size:22px;margin-bottom:8px;'>Besoin d un site web ?</h2><p style='color:#94a3b8;font-size:14px;line-height:1.6;margin-bottom:20px;'>Je cree des sites modernes, rapides et securises a partir de 500€</p><a href='#contact' style='display:inline-block;background:#818cf8;color:#0f172a;padding:12px 28px;border-radius:10px;font-weight:600;text-decoration:none;' onclick='localStorage.setItem(\'popupShown\',\'1\');this.closest(\'div > div\').parentElement.remove();'>Devis gratuit</a><button onclick='localStorage.setItem(\'popupShown\',\'1\');this.parentElement.parentElement.remove();' style='display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:12px;cursor:pointer;'>Non merci</button></div>";
+            o.onclick = function(e) { if (e.target === o) { localStorage.setItem("popupShown","1"); o.remove(); } };
+            document.body.appendChild(o);
           }, 30000);
         `}} />
       </body>
