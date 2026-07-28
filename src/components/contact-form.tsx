@@ -42,6 +42,11 @@ export function ContactForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("Erreur lors de l'envoi");
+      // Tracking Matomo : devis demandé
+      if (typeof window !== 'undefined' && (window as any)._paq) {
+        (window as any)._paq.push(['trackGoal', 1]);
+        (window as any)._paq.push(['trackEvent', 'Contact', 'Formulaire soumis', data.projectType]);
+      }
       setSent(true);
     } catch {
       setError("Une erreur est survenue. Réessayez ou envoyez-moi un email directement à alexistrechot@gmail.com");
