@@ -1,101 +1,111 @@
 "use client";
 
+import Link from "next/link";
 import { ExternalLink, CheckCircle2, Trophy, ArrowRight } from "lucide-react";
 import { Button } from "~/ui/primitives/button";
 import { siteData } from "~/lib/data";
+import { Icon } from "~/components/icon";
 import { Reveal, RevealItem, RevealStagger } from "~/components/scroll-reveal";
+
+const categoryBadgeClass: Record<string, string> = {
+  "Site vitrine": "bg-blue-100 text-blue-700",
+  "Application web": "bg-purple-100 text-purple-700",
+  default: "bg-emerald-100 text-emerald-700",
+};
+
+function CategoryBadge({ cat }: { cat?: string }) {
+  if (!cat) return null;
+  const cls = categoryBadgeClass[cat] ?? categoryBadgeClass.default;
+  return <span className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium ${cls}`}>{cat}</span>;
+}
 
 export function Portfolio() {
   const { portfolio } = siteData;
-  const { project } = portfolio;
+  const { projects, infra, placeholder } = portfolio;
 
   return (
     <section id="portfolio" className="py-24">
       <div className="mx-auto max-w-6xl px-6">
         <Reveal variant="fadeUp">
-          <h2 className="mb-16 text-center text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-            {portfolio.title}
-          </h2>
+          <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-primary sm:text-4xl">{portfolio.title}</h2>
+          <p className="mx-auto mb-16 max-w-xl text-center text-text-light">{projects.length} projets en production, hébergés sur la même infra.</p>
         </Reveal>
 
-        <Reveal variant="scaleIn">
-          <div className="overflow-hidden rounded-3xl border border-border bg-white shadow-sm">
-            <div className="grid md:grid-cols-5">
-              <div className="col-span-3 p-8 sm:p-12">
-                <span className="inline-flex items-center gap-1.5 rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold text-accent">
-                  <Trophy size={14} />
-                  {project.badge}
-                </span>
-
-                <h3 className="mt-4 text-2xl font-bold text-primary">
-                  {project.name}
-                </h3>
-
-                <div className="mt-6 space-y-4">
-                  <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-wide text-text-muted">
-                      Le besoin
-                    </h4>
-                    <p className="mt-1 leading-relaxed text-text-light">
-                      {project.context}
-                    </p>
+        <div className="grid gap-8 lg:grid-cols-3">
+          {projects.map((project, i) => (
+            <Reveal key={project.name} variant="fadeUp" delay={i * 0.1}>
+              <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-sm transition-shadow hover:shadow-md">
+                <div className="p-6 pb-4">
+                  <div className="mb-3 flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-2.5 py-0.5 text-xs font-semibold text-accent">
+                      <Trophy size={12} />{project.badge}
+                    </span>
+                    <CategoryBadge cat={project.category} />
                   </div>
-
-                  <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-wide text-text-muted">
-                      La solution
-                    </h4>
-                    <ul className="mt-2 space-y-2">
-                      {project.solution.map((s, i) => (
-                        <li key={i} className="flex items-start gap-2 text-text-light">
-                          <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-accent" />
-                          {s}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <h3 className="text-lg font-bold text-primary">{project.name}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-text-light">{project.context}</p>
                 </div>
 
-                <Button className="mt-8" variant="secondary" asChild>
-                  <a href={project.url} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink size={16} />
-                    Voir le site en direct
-                  </a>
-                </Button>
-              </div>
-
-              <div className="col-span-2 flex items-center bg-gradient-to-br from-primary to-primary-light p-8 sm:p-12">
-                <div className="w-full space-y-6">
-                  <h4 className="text-sm font-semibold uppercase tracking-wide text-text-muted">
-                    Résultats
-                  </h4>
-                  <RevealStagger>
-                    {project.results.map((r, i) => (
-                      <RevealItem key={i}>
-                        <div className="rounded-xl border border-white/10 bg-white/5 p-4 backdrop-blur">
-                          <p className="text-3xl font-bold text-accent-light">{r.value}</p>
-                          <p className="mt-1 text-sm text-text-muted">{r.label}</p>
-                        </div>
-                      </RevealItem>
+                <div className="border-t border-border px-6 py-4">
+                  <h4 className="text-xs font-semibold uppercase tracking-wide text-text-muted">Solution</h4>
+                  <ul className="mt-2 space-y-1.5">
+                    {project.solution.slice(0, 3).map((s, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5 text-xs text-text-light">
+                        <CheckCircle2 size={12} className="mt-0.5 shrink-0 text-accent" />{s}
+                      </li>
                     ))}
-                  </RevealStagger>
+                    {project.solution.length > 3 && <li className="text-xs text-text-muted italic">+{project.solution.length - 3} autres</li>}
+                  </ul>
                 </div>
+
+                <div className="mt-auto border-t border-border bg-gradient-to-br from-primary to-primary-light p-5">
+                  <h4 className="mb-3 text-xs font-semibold uppercase tracking-wide text-text-muted">Résultats</h4>
+                  <RevealStagger>
+                    <div className="grid grid-cols-2 gap-2">
+                      {project.results.slice(0, 4).map((r, idx) => (
+                        <RevealItem key={idx}>
+                          <div className="rounded-lg border border-white/10 bg-white/5 p-2 text-center">
+                            <p className="text-lg font-bold text-accent-light">{r.value}</p>
+                            <p className="text-[10px] leading-tight text-text-muted">{r.label}</p>
+                          </div>
+                        </RevealItem>
+                      ))}
+                    </div>
+                  </RevealStagger>
+                  <Button className="mt-4 w-full" variant="secondary" size="sm" asChild>
+                    <a href={project.url} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink size={14} />Voir le site
+                    </a>
+                  </Button>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        {infra && (
+          <Reveal variant="fadeUp" delay={0.3}>
+            <div className="mt-16 rounded-3xl border border-border bg-white p-8 sm:p-12">
+              <h3 className="text-center text-xl font-bold text-primary">{infra.title}</h3>
+              <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+                {infra.items.map((item) => (
+                  <div key={item.label} className="flex flex-col items-center gap-2 rounded-xl border border-border bg-surface/50 p-4 text-center transition-colors hover:border-accent/30">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10"><Icon name={item.icon} size={20} /></div>
+                    <p className="text-xs font-semibold text-primary">{item.label}</p>
+                    <p className="text-[10px] leading-tight text-text-muted">{item.detail}</p>
+                  </div>
+                ))}
               </div>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        )}
 
-        <Reveal variant="fadeUp" delay={0.2}>
+        <Reveal variant="fadeUp" delay={0.4}>
           <div className="mt-12 rounded-3xl border-2 border-dashed border-border p-12 text-center">
-            <p className="text-xl font-semibold text-primary">
-              {portfolio.placeholder.title}
-            </p>
-            <p className="mt-2 text-text-light">{portfolio.placeholder.body}</p>
+            <p className="text-xl font-semibold text-primary">{placeholder.title}</p>
+            <p className="mt-2 text-text-light">{placeholder.body}</p>
             <Button className="mt-6" variant="ghost" size="lg" asChild>
-              <a href="#contact">
-                {portfolio.placeholder.cta}
-                <ArrowRight size={16} />
-              </a>
+              <Link href="/#contact">{placeholder.cta}<ArrowRight size={16} /></Link>
             </Button>
           </div>
         </Reveal>
@@ -103,4 +113,3 @@ export function Portfolio() {
     </section>
   );
 }
-

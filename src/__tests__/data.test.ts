@@ -33,18 +33,23 @@ describe("Données du site", () => {
       }
     });
 
-    it("portfolio a une url de projet valide", () => {
-      const url = siteData.portfolio.project.url;
-      expect(url).toMatch(/^https?:\/\//);
-      expect(url).toContain("lesacacias.org");
+    it("portfolio a des projets avec des URLs valides", () => {
+      const projects = siteData.portfolio.projects;
+      expect(projects.length).toBeGreaterThanOrEqual(3);
+      const firstUrl = projects[0].url;
+      expect(firstUrl).toMatch(/^https?:\/\//);
+      expect(firstUrl).toContain("lesacacias.org");
     });
 
-    it("portfolio a exactement 5 résultats", () => {
-      expect(siteData.portfolio.project.results).toHaveLength(5);
-    });
-
-    it("portfolio a 4 items dans solution", () => {
-      expect(siteData.portfolio.project.solution).toHaveLength(4);
+    it("chaque projet portfolio a les champs requis", () => {
+      for (const project of siteData.portfolio.projects) {
+        expect(project.badge.length).toBeGreaterThan(0);
+        expect(project.name.length).toBeGreaterThan(0);
+        expect(project.context.length).toBeGreaterThan(0);
+        expect(project.solution.length).toBeGreaterThan(0);
+        expect(project.results.length).toBeGreaterThan(0);
+        expect(project.url).toBeTruthy();
+      }
     });
 
     it("services a exactement 3 cartes", () => {

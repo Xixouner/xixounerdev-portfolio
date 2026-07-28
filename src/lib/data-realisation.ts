@@ -2,7 +2,7 @@ export interface Realisation {
   slug: string;
   title: string;
   client: string;
-  category: "Site vitrine" | "Application web" | "DevOps & Hébergement";
+  category: "Site vitrine" | "Application web" | "SaaS" | "DevOps & Hébergement" | "Bientôt";
   image: string;
   context: string;
   problem: string;
@@ -11,6 +11,7 @@ export interface Realisation {
   results: { label: string; value: string }[];
   testimonial?: { text: string; author: string; role: string };
   url?: string;
+  comingSoon?: boolean;
 }
 
 export const realisations: Realisation[] = [
@@ -20,119 +21,98 @@ export const realisations: Realisation[] = [
     client: "Association Les Acacias",
     category: "Site vitrine",
     image: "/blog/og-default.svg",
-    context:
-      "L'association Les Acacias accompagne les seniors à domicile dans le Puy-de-Dôme. Leur ancien site WordPress était devenu illisible, lent, et invisible sur Google.",
-    problem:
-      "Site WordPress vieillissant avec 12 plugins, temps de chargement de 3.8s, score Lighthouse de 62. L'association perdait des familles chaque mois.",
+    context: "L'association Les Acacias accompagne les seniors à domicile dans le Puy-de-Dôme. Leur ancien site WordPress, vieux de 8 ans, était lent, illisible sur mobile et invisible sur Google. Les familles ne les trouvaient pas.",
+    problem: "Site WordPress avec 12 plugins, 3.8s de chargement, score Lighthouse 62/100. Accessibilité inexistante pour un public senior. Aucune visite organique.",
     solution: [
-      "Refonte complète avec design accessible (contraste renforcé, polices ≥ 16px)",
-      "Développement Next.js avec Static Site Generation : temps de chargement divisé par 5",
-      "Hébergement VPS Hetzner avec Docker : zéro risque de hack via plugin",
-      "Caddy en reverse proxy avec SSL automatique Let's Encrypt",
-      "Monitoring 24/7 via Healthchecks.io",
+      "Refonte Next.js complète avec design accessible : contrastes renforcés, polices ≥ 16px, navigation simplifiée",
+      "Static Site Generation : HTML pré-rendu, temps de chargement divisé par 5",
+      "Hébergement VPS Hetzner avec Docker : zéro maintenance, zéro risque de hack via plugin",
+      "Caddy reverse proxy avec SSL Let's Encrypt automatique, monitoring 24/7",
     ],
     techs: ["Next.js", "Tailwind CSS", "Docker", "Caddy", "Hetzner"],
     results: [
       { label: "Performance Lighthouse", value: "98/100" },
       { label: "Score SEO", value: "100/100" },
       { label: "Temps de chargement", value: "< 0.8s" },
-      { label: "Incidents depuis mise en ligne", value: "0" },
+      { label: "Incidents", value: "0 depuis lancement" },
     ],
     testimonial: {
-      text: "Alexis a refait notre site en un temps record. Il est rapide, facile à utiliser pour nos bénéficiaires, et on apparaît enfin dans Google.",
+      text: "Alexis a refait notre site en un temps record. Il est rapide, facile à utiliser pour nos bénéficiaires, et on apparaît enfin dans Google. On reçoit des demandes toutes les semaines.",
       author: "La présidente",
       role: "Les Acacias",
     },
     url: "https://lesacacias.org",
   },
   {
-    slug: "migration-devops-saas",
-    title: "Migration DevOps complète pour une startup SaaS",
-    client: "Startup SaaS B2B (secteur RH)",
-    category: "DevOps & Hébergement",
+    slug: "auditbot",
+    title: "AuditBot — SaaS d'audit de sécurité web & code par IA",
+    client: "Projet personnel × clients TPE/PME",
+    category: "SaaS",
     image: "/blog/og-default.svg",
-    context:
-      "Une startup SaaS en croissance : app qui plantait aux pics d'utilisation, déploiements de 45 minutes, infra à 350 €/mois pour 200 utilisateurs.",
-    problem:
-      "Tout tournait en processus natifs sur un VPS unique (Node.js, PostgreSQL, Redis). Pas d'isolation, pas de rollback. Un crash API faisait tomber la base.",
+    context: "Les TPE et PME n'ont ni le budget ni les compétences pour auditer la sécurité de leur site ou de leur code. Un audit pro coûte 500 à 2 000 €. AuditBot démocratise l'audit : analyse gratuite en 8 secondes avec un score de A+ à F.",
+    problem: "Audits de sécurité inaccessibles aux petites structures. Solutions existantes trop chères, trop complexes, ou basées sur des IA américaines (GDPR incompatible).",
     solution: [
-      "Dockerisation complète : 4 conteneurs isolés via Docker Compose",
-      "CI/CD GitHub Actions : build, test, déploiement auto en 3 minutes",
-      "Migration VPS Hetzner CX32 : coût divisé par 5 (70 €/mois au lieu de 350 €)",
-      "Caddy reverse proxy avec load balancing et health checks",
-      "Backup PostgreSQL quotidien, rotation 30 jours, chiffré",
+      "Application Next.js fullstack : authentification, dashboard, historique d'audits",
+      "3 plans tarifaires : Gratuit (5 audits/mois), Mini (5 €/mois), Pro (19 €/mois)",
+      "IA Mistral (souveraine européenne, RGPD-friendly) pour l'analyse de code et de configurations",
+      "Intégration Stripe pour les paiements, PostgreSQL pour le stockage, Docker pour le déploiement",
+      "Score A+ à F avec recommandations actionnables et export PDF",
     ],
-    techs: ["Docker", "Docker Compose", "GitHub Actions", "Caddy", "PostgreSQL", "Redis", "Hetzner"],
+    techs: ["Next.js", "Tailwind CSS", "Stripe", "PostgreSQL", "Docker", "Mistral AI", "Caddy"],
     results: [
-      { label: "Temps de déploiement", value: "< 3 min" },
-      { label: "Disponibilité (uptime)", value: "99.97%" },
-      { label: "Coût mensuel", value: "70 €" },
-      { label: "Économie annuelle", value: "3 360 €" },
+      { label: "Temps d'audit", value: "8 secondes" },
+      { label: "Plans", value: "3 (dont gratuit)" },
+      { label: "IA", value: "Souveraine UE" },
+      { label: "Vulnérabilités", value: "0 connue" },
     ],
-    testimonial: {
-      text: "Avant, chaque déploiement me stressait. Maintenant je push sur main et c'est en ligne. Alexis a sauvé nos nuits.",
-      author: "Le CTO",
-      role: "Startup SaaS RH",
-    },
+    url: "https://auditbot.xixouner.com",
   },
   {
-    slug: "outil-interne-productivite",
-    title: "Outil interne de gestion pour une PME de 30 employés",
-    client: "PME industrielle (secteur métallurgie)",
+    slug: "dashboard-xixouner",
+    title: "Dashboard Xixouner — Monitoring & analytics centralisé",
+    client: "Usage interne — gestion de mes 5 sites",
     category: "Application web",
     image: "/blog/og-default.svg",
-    context:
-      "Une PME gérait devis, plannings et production via Excel + Google Sheets. Erreurs, conflits de version, 6h/semaine perdues par le responsable.",
-    problem:
-      "3 fichiers Excel pour les devis, 2 Google Sheets pour les plannings, erreurs de ressaisie constantes. Aucun historique consolidé.",
+    context: "Avec 5 sites à gérer (Les Acacias, AuditBot, XixounerDev, et 2 autres projets), j'avais besoin d'un tableau de bord unique pour suivre l'uptime, les déploiements CI/CD, les statistiques de visites Matomo, le tout sans ouvrir 10 onglets.",
+    problem: "Pas d'outil gratuit qui centralise uptime + CI/CD + analytics en un seul écran. Les solutions existantes sont payantes, complexes, ou ne correspondent pas à mon stack (Hetzner, Docker, Caddy, Matomo).",
     solution: [
-      "Application web sur mesure : devis, planning, suivi de chantier en temps réel",
-      "Interface intuitive pour non-techniciens (formation 30 min)",
-      "Base PostgreSQL unique : plus de conflits, plus de doubles saisies",
-      "Dashboard avec KPI : devis en cours, plannings, retards, CA prévisionnel",
-      "Déploiement sur VPS existant, accessible depuis tous les postes",
+      "Serveur Node.js autonome : requête directe des bases (Matomo, MariaDB), pas d'API externe",
+      "Interface SVG animée avec jauges de statut en temps réel, auto-refresh toutes les 60 secondes",
+      "Suivi CI/CD : état du dernier build GitHub Actions par projet, logs accessibles en 1 clic",
+      "Authentification via Caddy basic auth : simple, sécurisé, zéro code d'auth à maintenir",
+      "Statistiques Matomo : visites, conversions (formulaires), pages les plus visitées, taux de rebond",
     ],
-    techs: ["Next.js", "Prisma", "PostgreSQL", "Docker", "Tailwind CSS", "React Hook Form"],
+    techs: ["Node.js", "SVG", "Matomo API", "MariaDB", "Caddy", "Docker", "Hetzner"],
     results: [
-      { label: "Temps gagné / semaine", value: "6h" },
-      { label: "Gain annuel estimé", value: "~12 500 €" },
-      { label: "Erreurs de saisie", value: "→ 0" },
-      { label: "Délai de mise en place", value: "3 semaines" },
+      { label: "Sites monitorés", value: "5" },
+      { label: "Temps de check", value: "< 5s vs 5 min" },
+      { label: "CI/CD", value: "Tracké en direct" },
+      { label: "Alertes", value: "Telegram si down" },
     ],
-    testimonial: {
-      text: "En 3 semaines, Alexis nous a livré exactement ce dont on avait besoin. Notre responsable a gagné un jour par semaine.",
-      author: "Le dirigeant",
-      role: "PME métallurgie",
-    },
+    url: "https://status.xixouner.com",
   },
   {
-    slug: "landing-page-conversion",
-    title: "Landing page haute conversion pour un lancement de produit",
-    client: "Entrepreneur e-commerce (secteur bien-être)",
-    category: "Site vitrine",
+    slug: "crm-xixouner",
+    title: "CRM Xixouner — CRM de prospection maison",
+    client: "Usage interne — pipeline commercial",
+    category: "Bientôt",
     image: "/blog/og-default.svg",
-    context:
-      "Un entrepreneur lançait un complément alimentaire. Son ancienne page Wix était lente (4.2s), buggait sur mobile, taux de conversion < 1%.",
-    problem:
-      "Page Wix lente, formulaire buggé sur mobile, aucun tracking. Taux de conversion estimé sous 1%.",
+    context: "Pour structurer ma prospection commerciale, je développe mon propre CRM. Fini les Google Sheets éparpillés : un outil unique pour suivre mes prospects, mes relances et mes devis.",
+    problem: "Les CRM du marché (HubSpot, Pipedrive) sont trop chers pour un freelance solo (> 50 €/mois). Les versions gratuites sont limitées en fonctionnalités. Aucun n'est pensé pour le cycle de vente d'un développeur freelance.",
     solution: [
-      "Landing page Next.js ultra-rapide (Lighthouse 99) avec design centré conversion",
-      "Formulaire React Hook Form + Zod : validation instantanée, zéro bug mobile",
-      "Intégration Stripe pour précommandes sécurisées",
-      "Tracking Matomo : taux de conversion, temps passé, rebond",
-      "A/B testing basique sur les CTA pour optimiser le taux de clic",
+      "Stack : Node.js + PostgreSQL + Docker, déployé sur le VPS existant",
+      "Fiches prospects avec historique des échanges, source (Malt, Google, recommandation)",
+      "Pipeline de vente visuel : Nouveau → Contacté → Devis envoyé → Signé → Perdu",
+      "Système de relances automatiques : rappel si pas de réponse sous 5 jours",
+      "Génération d'emails de relance assistée par IA (Mistral), personnalisable",
     ],
-    techs: ["Next.js", "Tailwind CSS", "Stripe", "React Hook Form", "Zod", "Matomo"],
+    techs: ["Node.js", "PostgreSQL", "Docker", "Mistral AI", "Tailwind CSS", "Caddy"],
     results: [
-      { label: "Taux de conversion", value: "4.8%" },
-      { label: "Temps de chargement", value: "< 0.6s" },
-      { label: "Précommandes (30j)", value: "340" },
-      { label: "Score Lighthouse", value: "99/100" },
+      { label: "Statut", value: "En développement" },
+      { label: "Stack", value: "Node.js + PG" },
+      { label: "Fonctionnalités", value: "5 modules" },
+      { label: "Cible", value: "Freelances" },
     ],
-    testimonial: {
-      text: "340 précommandes en un mois — bien au-delà de mes objectifs. Le site est magnifique et charge instantanément.",
-      author: "Le fondateur",
-      role: "E-commerce bien-être",
-    },
+    comingSoon: true,
   },
 ] as const;

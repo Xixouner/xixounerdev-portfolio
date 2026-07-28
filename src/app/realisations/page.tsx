@@ -20,6 +20,8 @@ export const metadata: Metadata = {
 function getCatColor(cat: string) {
   if (cat === "Site vitrine") return "bg-blue-100 text-blue-700";
   if (cat === "Application web") return "bg-purple-100 text-purple-700";
+  if (cat === "SaaS") return "bg-emerald-100 text-emerald-700";
+  if (cat === "Bientôt") return "bg-amber-100 text-amber-700";
   return "bg-emerald-100 text-emerald-700";
 }
 
@@ -81,12 +83,16 @@ export default function RealisationsPage() {
                       </footer>
                     </blockquote>
                   )}
-                  {project.url && (
+                  {project.comingSoon ? (
+                    <span className="inline-flex items-center gap-1 rounded-full bg-amber-100 px-3 py-1 text-xs font-medium text-amber-700">
+                      🚧 Bientôt disponible
+                    </span>
+                  ) : project.url ? (
                     <a href={project.url} target="_blank" rel="noopener noreferrer"
                       className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline">
                       Voir le site <ExternalLink size={12} />
                     </a>
-                  )}
+                  ) : null}
                 </div>
               </article>
             </Reveal>

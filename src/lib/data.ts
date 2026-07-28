@@ -48,30 +48,90 @@ export const siteData = {
 
   portfolio: {
     title: "Ce que je fais, avec des vrais chiffres",
-    project: {
-      badge: "Étude de cas",
-      name: "Les Acacias — Site vitrine pour une association d'aide aux seniors",
-      context:
-        "Un site vieillissant, illisible, invisible sur Google. L'association perdait des familles qui ne la trouvaient tout simplement pas en ligne.",
-      solution: [
-        "Refonte complète avec design sur-mesure et accessible",
-        "Développement Next.js optimisé pour la performance",
-        "Hébergement VPS Hetzner avec Docker et sauvegardes",
-        "Certificat SSL automatique et monitoring 24/7",
-      ],
-      results: [
-        { label: "Performance Lighthouse", value: "98/100" },
-        { label: "Score SEO", value: "100/100" },
-        { label: "Incidents depuis mise en ligne", value: "0" },
-        { label: "Responsive", value: "100%" },
-        { label: "Temps de chargement", value: "< 0.8s" },
-      ],
-      url: "https://lesacacias.org",
-    },
+    projects: [
+      {
+        badge: "Étude de cas",
+        name: "Les Acacias — Site vitrine pour une association d'aide aux seniors",
+        category: "Site vitrine",
+        context:
+          "Un site vieillissant, illisible, invisible sur Google. L'association perdait des familles qui ne la trouvaient tout simplement pas en ligne.",
+        solution: [
+          "Refonte complète avec design sur-mesure et accessible",
+          "Développement Next.js optimisé pour la performance",
+          "Hébergement VPS Hetzner avec Docker et sauvegardes",
+          "Certificat SSL automatique et monitoring 24/7",
+        ],
+        results: [
+          { label: "Performance Lighthouse", value: "98/100" },
+          { label: "Score SEO", value: "100/100" },
+          { label: "Incidents depuis mise en ligne", value: "0" },
+          { label: "Responsive", value: "100%" },
+          { label: "Temps de chargement", value: "< 0.8s" },
+        ],
+        url: "https://lesacacias.org",
+      },
+      {
+        badge: "SaaS",
+        name: "AuditBot — Outil SaaS d'audit de sécurité web & code",
+        category: "Application web",
+        context:
+          "Les TPE/PME n'ont pas les moyens de payer des audits de sécurité. AuditBot analyse gratuitement un site ou un repo GitHub en 8 secondes avec un score A+ à F, grâce à l'IA Mistral.",
+        solution: [
+          "App Next.js avec authentification, Stripe, PostgreSQL, Docker",
+          "Audits illimités selon abonnement (Gratuit 5/mois, Mini 5€, Pro 19€)",
+          "IA Mistral souveraine européenne pour l'analyse de code",
+          "Score A+ à F avec recommandations détaillées",
+        ],
+        results: [
+          { label: "Temps d'audit", value: "8 secondes" },
+          { label: "Plans", value: "Mini / Pro / Business" },
+          { label: "IA", value: "Mistral (UE)" },
+          { label: "Vulnérabilités", value: "0 connue" },
+          { label: "Open Source", value: "Ready" },
+        ],
+        url: "https://auditbot.xixouner.com",
+      },
+      {
+        badge: "Outillage",
+        name: "Dashboard Xixouner — Monitoring & analytics maison",
+        category: "Application web",
+        context:
+          "Gérant plusieurs sites, j'avais besoin d'un tableau de bord unifié pour suivre l'uptime, les déploiements CI/CD et les stats Matomo en un coup d'œil.",
+        solution: [
+          "Serveur Node.js autonome, requête directe des bases",
+          "UI moderne avec SVG et animations, auto-refresh 60s",
+          "Authentification Caddy, accessible en HTTPS",
+          "Suivi temps réel : uptime, CI/CD, visites, conversions",
+        ],
+        results: [
+          { label: "Sites monitorés", value: "5 en temps réel" },
+          { label: "CI/CD", value: "Tracké" },
+          { label: "Stats Matomo", value: "Visites / conversions" },
+          { label: "Pages analysées", value: "Top 10" },
+          { label: "Refresh", value: "60s" },
+        ],
+        url: "https://status.xixouner.com",
+      },
+    ],
     placeholder: {
       title: "Votre projet ici",
       body: "Le prochain projet mis en avant, c'est peut-être le vôtre.",
       cta: "Parlons-en",
+    },
+    /** Section infrastructure — affichée sous les projets */
+    infra: {
+      title: "Comment c'est hébergé ?",
+      items: [
+        { icon: "docker", label: "Docker + Compose", detail: "Chaque projet dans son container isolé" },
+        { icon: "lock", label: "Caddy", detail: "Reverse proxy HTTPS auto, Let's Encrypt, basic auth" },
+        { icon: "globe", label: "Matomo", detail: "Analytics auto-hébergé, pas de Google Analytics" },
+        { icon: "refresh", label: "CI/CD", detail: "Webhook GitHub → rebuild auto du container" },
+        { icon: "zap", label: "Monitoring", detail: "Script bash + crontab 5 min, alerte Telegram si down" },
+        { icon: "lock", label: "Backups", detail: "MariaDB + PostgreSQL + Redis, rotation 7 jours" },
+        { icon: "monitor", label: "Dashboard", detail: "status.xixouner.com, tout en un coup d'œil" },
+        { icon: "globe", label: "Resend", detail: "API email pour les formulaires de contact" },
+        { icon: "monitor", label: "Hetzner VPS", detail: "7 Go RAM, 38 Go SSD" },
+      ],
     },
   },
 
