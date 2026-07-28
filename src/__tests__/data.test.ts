@@ -98,13 +98,13 @@ describe("Données du site", () => {
   });
 
   describe("navLinks", () => {
-    it("a 4 liens de navigation", () => {
-      expect(navLinks).toHaveLength(4);
+    it("a 5 liens de navigation", () => {
+      expect(navLinks).toHaveLength(5);
     });
 
-    it("tous les href commencent par #", () => {
+    it("tous les href sont valides (ancre ou chemin)", () => {
       for (const link of navLinks) {
-        expect(link.href).toMatch(/^#/);
+        expect(link.href).toMatch(/^(#|\/)/);
       }
     });
 

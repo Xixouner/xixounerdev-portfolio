@@ -46,6 +46,7 @@ export const footerData = {
 
 export const navLinks = [
   { label: "Accueil", href: "#hero" },
+  { label: "Blog", href: "/blog" },
   { label: "Réalisations", href: "#portfolio" },
   { label: "Services", href: "#services" },
   { label: "Devis gratuit", href: "#contact" },
