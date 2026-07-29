@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
       static: 300,
     },
   },
+  // Cibler navigateurs modernes — réduit polyfills
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
+  },
   async headers() {
     return [
       {
