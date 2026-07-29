@@ -2,6 +2,14 @@
   "name": "xixounerdev",
   "version": "1.0.0",
   "private": true,
+  "browserslist": {
+    "production": [
+      ">0.3%",
+      "not dead",
+      "not op_mini all",
+      "not IE 11"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
