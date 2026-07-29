@@ -59,6 +59,14 @@ export const metadata: Metadata = {
     title: "Développeur Web Freelance Pas Cher & Rapide | XixounerDev",
     description:
       "Développeur web freelance à Clermont-Ferrand. Sites sur-mesure dès 500€, rapides, sécurisés et bien hébergés. Devis gratuit sous 24h.",
+    images: [
+      {
+        url: "https://xixouner.com/og-home.png",
+        width: 1200,
+        height: 630,
+        alt: "XixounerDev — Développeur Web Freelance à Clermont-Ferrand",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",

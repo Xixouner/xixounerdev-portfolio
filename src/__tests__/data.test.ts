@@ -111,8 +111,8 @@ describe("Données du site", () => {
   });
 
   describe("navLinks", () => {
-    it("a 5 liens de navigation", () => {
-      expect(navLinks).toHaveLength(5);
+    it("a 6 liens de navigation", () => {
+      expect(navLinks).toHaveLength(6);
     });
 
     it("tous les href sont valides (ancre ou chemin)", () => {

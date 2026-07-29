@@ -4,14 +4,22 @@
 Développeur web freelance & DevOps basé à Clermont-Ferrand.
 Création de sites sur-mesure pas chers et rapides, hébergement pro, outils de productivité.
 
-## Pages
+## Pages principales
 - [Accueil](https://xixouner.com): Portfolio one-page — services, réalisations, formulaire de devis gratuit
+- [Réalisations](https://xixouner.com/realisations): 4 projets détaillés (Les Acacias, AuditBot, Dashboard, CRM)
+- [Services](https://xixouner.com/services): 3 offres avec processus, inclus/exclus, stack technique et prix
+- [Blog](https://xixouner.com/blog): 9 articles techniques sur le SEO, le DevOps, le développement web
 - [Mentions légales](https://xixouner.com/mentions-legales)
 - [Politique de confidentialité](https://xixouner.com/confidentialite)
 
+## Catégories du blog
+- [SEO & Web](https://xixouner.com/blog/category/seo-web): Référencement, performance, visibilité en ligne
+- [DevOps / VPS](https://xixouner.com/blog/category/devops-vps): Hébergement pro, Docker, Caddy, monitoring
+- [Dev Web](https://xixouner.com/blog/category/dev-web): Technos, frameworks, comparatifs
+
 ## Services
 - Création de site web sur-mesure — à partir de 500 € HT
-- Outils sur-mesure & Productivité — à partir de 500 € HT
+- Outils sur-mesure & Productivité — à partir de 1 000 € HT
 - Hébergement & DevOps — à partir de 5 € / mois
 
 ## Contact

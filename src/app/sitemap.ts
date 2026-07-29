@@ -31,6 +31,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
+      url: "https://xixouner.com/a-propos",
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+    {
       url: "https://xixouner.com/mentions-legales",
       lastModified: new Date("2026-07-23"),
       changeFrequency: "yearly",

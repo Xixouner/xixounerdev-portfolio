@@ -49,5 +49,6 @@ export const navLinks = [
   { label: "Blog", href: "/blog" },
   { label: "Réalisations", href: "/realisations" },
   { label: "Services", href: "/services" },
+  { label: "À propos", href: "/a-propos" },
   { label: "Devis gratuit", href: "/#contact" },
 ] as const;
