@@ -22,9 +22,9 @@ export function Footer() {
 
           <Reveal variant="fadeUp" delay={0.1}>
             <div>
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-text-light">
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-text-light">
                 Navigation
-              </h4>
+              </h3>
               <ul className="space-y-2">
                 {navLinks.map((link) => (
                   <li key={link.href}>
@@ -39,9 +39,9 @@ export function Footer() {
 
           <Reveal variant="fadeUp" delay={0.2}>
             <div>
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-text-light">
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-text-light">
                 Plateformes
-              </h4>
+              </h3>
               <ul className="space-y-2">
                 <li>
                   <a href={footerData.malt} target="_blank" rel="noopener noreferrer"
@@ -67,9 +67,9 @@ export function Footer() {
 
           <Reveal variant="fadeUp" delay={0.3}>
             <div>
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-wide text-text-light">
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-text-light">
                 Contact
-              </h4>
+              </h3>
               <ul className="space-y-2">
                 <li>
                   <a href={`mailto:${footerData.email}`} className="text-sm transition-colors hover:text-white">
