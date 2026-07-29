@@ -188,3 +188,10 @@ Quand vous démarrez, votre site a une autorité proche de zéro. Viser « crée
 ## Le mot de la fin
 
 Le SEO n'est pas une science obscure réservée aux agences qui facturent 2 000€ par mois. C'est une discipline accessible, méthodique, qui récompense la qualité et la régularité. Pas besoin d'être un génie. Juste besoin de faire les bonnes choses, dans le bon ordre, et de ne pas lâcher au bout de deux mois.
+
+---
+
+**📖 À lire aussi :**
+- [Création site internet pas cher — à partir de 500€](/blog/creation-site-internet-pas-cher)
+- [Prix création site web 2026 : combien ça coûte vraiment ?](/blog/prix-creation-site-web)
+- [Refaire son site internet : les signes qui ne trompent pas](/blog/refaire-son-site-internet)

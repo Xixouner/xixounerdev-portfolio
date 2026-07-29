@@ -86,3 +86,10 @@ Beaucoup de mes clients artisans pensaient qu'un site était un luxe. Ils ont d�
 ## En résumé
 
 Un site internet pour artisan, c'est pas du luxe. C'est un outil de travail comme votre perceuse, votre four ou vos ciseaux. Ça vous amène des clients, ça vous donne une image pro, et ça bosse pendant que vous dormez. À partir de 400€, sans abonnement, avec hébergement pro. Si vous hésitez encore, contactez-moi : le premier échange est gratuit et sans engagement.
+
+---
+
+**📖 À lire aussi :**
+- [Création site internet pas cher — à partir de 500€](/blog/creation-site-internet-pas-cher)
+- [Créateur site web Clermont-Ferrand — des sites qui rapportent](/blog/createur-site-web-clermont-ferrand)
+- [Comment passer de 0 à 100 visiteurs/jour sans pub](/blog/passer-de-0-a-100-visiteurs-par-jour-sans-pub)

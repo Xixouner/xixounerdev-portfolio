@@ -78,3 +78,10 @@ Je travaille avec des clients dans tout le Puy-de-Dôme : Chamalières, Cournon,
 ## Prêt à passer à la vitesse supérieure ?
 
 Que vous soyez boucher à Cournon, fleuriste à Riom, ou consultant à Clermont, vous méritez un site qui vous ressemble et qui vous amène des clients. Pas un template générique. Pas un site qui rame. Un vrai site pro, fait main, avec un suivi personnalisé.
+
+---
+
+**📖 À lire aussi :**
+- [Création site internet pas cher — à partir de 500€](/blog/creation-site-internet-pas-cher)
+- [Site internet artisan : pourquoi votre métier a besoin d'un site](/blog/site-internet-artisan)
+- [Comment passer de 0 à 100 visiteurs/jour sans pub](/blog/passer-de-0-a-100-visiteurs-par-jour-sans-pub)

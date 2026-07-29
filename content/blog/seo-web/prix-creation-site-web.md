@@ -110,3 +110,10 @@ Non. Le devis que je vous envoie inclut tout. Pas de surprise, pas de « ah mais
 | Compétences | Dépend du freelance | Équipe pluridisciplinaire |
 
 Pour un site vitrine, un bon freelance suffit largement. Pour un projet très complexe (marketplace, SaaS à plusieurs millions d'utilisateurs), une agence apporte une équipe complète. Pour tout le reste, un freelance compétent fait le même travail pour 3 à 5 fois moins cher.
+
+---
+
+**📖 À lire aussi :**
+- [Création site internet pas cher — à partir de 500€](/blog/creation-site-internet-pas-cher)
+- [Refaire son site internet : les signes qui ne trompent pas](/blog/refaire-son-site-internet)
+- [Next.js vs WordPress : ce que personne ne vous dit](/blog/nextjs-vs-wordpress-verite)

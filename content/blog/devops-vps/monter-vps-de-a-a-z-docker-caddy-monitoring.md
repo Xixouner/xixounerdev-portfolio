@@ -393,3 +393,10 @@ Avant de dormir tranquille, vérifiez que :
 - [ ] `docker system prune` en cron hebdomadaire
 
 Cochez tout ça, et vous pouvez partir en vacances l'esprit tranquille. Votre serveur tournera sans vous.
+
+---
+
+**📖 À lire aussi :**
+- [J'ai délégué la gestion de mon serveur à une IA — voici comment](/blog/jai-delegue-gestion-serveur-a-une-ia-openclaw)
+- [Création site internet pas cher — à partir de 500€](/blog/creation-site-internet-pas-cher)
+- [Prix création site web 2026 : combien ça coûte vraiment ?](/blog/prix-creation-site-web)

@@ -76,3 +76,10 @@ En une refonte, l'association a gagné en visibilité et divisé ses coûts par 
 ## Pourquoi Next.js est idéal pour une refonte
 
 Contrairement à WordPress qui nécessite des plugins, des mises à jour constantes, et une maintenance lourde, Next.js génère des pages HTML statiques ultra-rapides. Après la refonte, vous n'avez plus rien à faire. Le site tourne tout seul. Pas de mise à jour de sécurité à appliquer, pas de plugin à maintenir. Juste un site qui marche.
+
+---
+
+**📖 À lire aussi :**
+- [Création site internet pas cher — à partir de 500€](/blog/creation-site-internet-pas-cher)
+- [Prix création site web 2026 : combien ça coûte vraiment ?](/blog/prix-creation-site-web)
+- [Comment passer de 0 à 100 visiteurs/jour sans pub](/blog/passer-de-0-a-100-visiteurs-par-jour-sans-pub)

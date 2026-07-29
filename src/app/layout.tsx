@@ -61,7 +61,7 @@ export const metadata: Metadata = {
       "Développeur web freelance à Clermont-Ferrand. Sites sur-mesure dès 500€, rapides, sécurisés et bien hébergés. Devis gratuit sous 24h.",
     images: [
       {
-        url: "https://xixouner.com/og-home.png",
+        url: "https://xixouner.com/og-home.svg",
         width: 1200,
         height: 630,
         alt: "XixounerDev — Développeur Web Freelance à Clermont-Ferrand",
@@ -132,7 +132,7 @@ export default function RootLayout({
               "@type": "LocalBusiness",
               "@id": "https://xixouner.com/#local",
               name: "XixounerDev",
-              image: "https://xixouner.com/photo_pro.jpg",
+              image: "https://xixouner.com/photo_pro.webp",
               url: "https://xixouner.com",
               priceRange: "€€",
               address: {
@@ -167,6 +167,14 @@ export default function RootLayout({
               description:
                 "Développeur web freelance. Sites sur-mesure pas chers, rapides, sécurisés.",
               inLanguage: "fr",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://xixouner.com/blog?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
+              },
               publisher: { "@id": "https://xixouner.com/#org" },
               mainEntity: {
                 "@type": "ItemList",

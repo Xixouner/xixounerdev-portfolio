@@ -226,3 +226,10 @@ Ce n'est pas de la magie. C'est juste le bon outil au bon endroit.
 ---
 
 **Vous voulez la même stack pour votre projet ?** Je configure, déploie et maintiens des infrastructures Docker complètes avec monitoring IA, CI/CD et backups — le tout pour quelques euros par mois. [Parlons-en →](https://xixouner.com/#contact)
+
+---
+
+**📖 À lire aussi :**
+- [Monter un VPS de A à Z : Docker, Caddy et monitoring](/blog/monter-vps-de-a-a-z-docker-caddy-monitoring)
+- [Next.js vs WordPress : ce que personne ne vous dit](/blog/nextjs-vs-wordpress-verite)
+- [Comment passer de 0 à 100 visiteurs/jour sans pub](/blog/passer-de-0-a-100-visiteurs-par-jour-sans-pub)

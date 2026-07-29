@@ -78,3 +78,10 @@ Un site Next.js bien codé part avec un avantage énorme sur Google : HTML propr
 ## Un investissement, pas une dépense
 
 500€ pour un site qui vous ramène des clients pendant des années, c'est cher ou pas cher ? Si votre site vous amène 2 clients par mois, il est rentabilisé en moins de 2 mois. Tout le reste, c'est du bénéfice net. Comparez à une pub Facebook où vous payez pour chaque clic. Un site bien fait, c'est un actif qui travaille pour vous 24h/24.
+
+---
+
+**📖 À lire aussi :**
+- [Prix création site web 2026 : combien ça coûte vraiment ?](/blog/prix-creation-site-web)
+- [Refaire son site internet : les signes qui ne trompent pas](/blog/refaire-son-site-internet)
+- [Site internet artisan : pourquoi votre métier a besoin d'un site](/blog/site-internet-artisan)

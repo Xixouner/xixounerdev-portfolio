@@ -174,3 +174,10 @@ WordPress n'est pas mort. Il reste le roi du e-commerce (via WooCommerce) et le 
 ---
 
 **Envie d'un site Next.js qui cartonne ?** C'est ce que je fais tous les jours. Design sur-mesure, performance max, SEO au top, hébergement pro. À partir de 400€. [Devis gratuit →](https://xixouner.com/#contact)
+
+---
+
+**📖 À lire aussi :**
+- [Création site internet pas cher — à partir de 500€](/blog/creation-site-internet-pas-cher)
+- [Prix création site web 2026 : combien ça coûte vraiment ?](/blog/prix-creation-site-web)
+- [Refaire son site internet : les signes qui ne trompent pas](/blog/refaire-son-site-internet)
