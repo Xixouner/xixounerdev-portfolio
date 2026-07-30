@@ -330,10 +330,10 @@ export default function RootLayout({
             var accentBar = document.createElement("div");
             accentBar.style.cssText = "width:56px;height:4px;background:linear-gradient(90deg,#06b6d4,#22d3ee);border-radius:2px;margin:0 auto 24px;";
 
-            // Rocket emoji
+            // Icône éclair SVG (zap — rapidité)
             var icon = document.createElement("div");
-            icon.textContent = "\u{1F680}";
-            icon.style.cssText = "font-size:36px;margin-bottom:14px;";
+            icon.style.cssText = "margin-bottom:16px;display:flex;justify-content:center;";
+            icon.innerHTML = '<svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="21" stroke="#06b6d4" stroke-width="1.5" fill="rgba(6,182,212,0.08)"/><path d="M26 2l-10 16h8l-2 14 12-18h-8l4-12H26z" fill="#06b6d4" transform="translate(2,2) scale(0.95)"/></svg>';
 
             // Title
             var title = document.createElement("p");
