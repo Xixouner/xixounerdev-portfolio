@@ -284,14 +284,122 @@ export default function RootLayout({
           };
           document.body.appendChild(wa);
 
-          // Pop-up devis apres 30s
+          // Pop-up devis après 30s — design system (cyan #06b6d4)
           setTimeout(function() {
             if (localStorage.getItem("popupShown")) return;
-            var o = document.createElement("div");
-            o.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:99998;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);";
-            o.innerHTML = "<div style='background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:20px;padding:40px;max-width:420px;width:90%;text-align:center;'><h2 style='color:#818cf8;font-size:22px;margin-bottom:8px;'>Besoin d un site web ?</h2><p style='color:#94a3b8;font-size:14px;line-height:1.6;margin-bottom:20px;'>Je cree des sites modernes, rapides et securises a partir de 500€</p><a href='#contact' style='display:inline-block;background:#818cf8;color:#0f172a;padding:12px 28px;border-radius:10px;font-weight:600;text-decoration:none;' onclick='localStorage.setItem(\'popupShown\',\'1\');this.closest(\'div > div\').parentElement.remove();'>Devis gratuit</a><button onclick='localStorage.setItem(\'popupShown\',\'1\');this.parentElement.parentElement.remove();' style='display:block;margin:12px auto 0;background:none;border:none;color:#64748b;font-size:12px;cursor:pointer;'>Non merci</button></div>";
-            o.onclick = function(e) { if (e.target === o) { localStorage.setItem("popupShown","1"); o.remove(); } };
-            document.body.appendChild(o);
+
+            var track = function(cat, act, nam) {
+              var p = window._paq || [];
+              p.push(["trackEvent", cat, act, nam]);
+            };
+            track("Popup", "Show", "Devis 30s");
+
+            // Overlay
+            var overlay = document.createElement("div");
+            overlay.setAttribute("role", "dialog");
+            overlay.setAttribute("aria-modal", "true");
+            overlay.setAttribute("aria-label", "Besoin d\u2019un site web ? Demandez votre devis gratuit");
+            overlay.style.cssText = "position:fixed;inset:0;background:rgba(15,23,42,0.72);z-index:99998;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;transition:opacity .35s ease;";
+
+            // Card
+            var card = document.createElement("div");
+            card.style.cssText = "background:#fff;border-radius:20px;padding:48px 36px 36px;max-width:430px;width:92%;text-align:center;box-shadow:0 25px 60px -15px rgba(0,0,0,0.3);position:relative;transform:translateY(32px) scale(0.9);opacity:0;transition:all .45s cubic-bezier(0.34,1.56,0.64,1);";
+
+            // Close function
+            var closePopup = function(reason) {
+              localStorage.setItem("popupShown", "1");
+              if (reason) track("Popup", "Click", reason);
+              overlay.style.opacity = "0";
+              card.style.transform = "translateY(16px) scale(0.95)";
+              card.style.opacity = "0";
+              card.style.transition = "all .22s ease";
+              document.body.style.overflow = "";
+              setTimeout(function() { overlay.remove(); }, 250);
+            };
+
+            // Close button (✕)
+            var closeBtn = document.createElement("button");
+            closeBtn.innerHTML = "&times;";
+            closeBtn.setAttribute("aria-label", "Fermer la pop-up");
+            closeBtn.style.cssText = "position:absolute;top:12px;right:16px;background:none;border:none;font-size:26px;color:#94a3b8;cursor:pointer;line-height:1;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px;transition:color .2s,background .2s;";
+            closeBtn.onmouseenter = function() { this.style.color = "#0f172a"; this.style.background = "#f1f5f9"; };
+            closeBtn.onmouseleave = function() { this.style.color = "#94a3b8"; this.style.background = "none"; };
+            closeBtn.onclick = function(e) { e.stopPropagation(); closePopup("Fermer"); };
+
+            // Accent bar
+            var accentBar = document.createElement("div");
+            accentBar.style.cssText = "width:56px;height:4px;background:linear-gradient(90deg,#06b6d4,#22d3ee);border-radius:2px;margin:0 auto 24px;";
+
+            // Rocket emoji
+            var icon = document.createElement("div");
+            icon.textContent = "\u{1F680}";
+            icon.style.cssText = "font-size:36px;margin-bottom:14px;";
+
+            // Title
+            var title = document.createElement("p");
+            title.id = "popup-title";
+            title.style.cssText = "color:#0f172a;font-size:23px;font-weight:750;margin:0 0 10px;line-height:1.3;letter-spacing:-0.01em;";
+            title.textContent = "Besoin d\u2019un site web ?";
+
+            // Subtitle
+            var subtitle = document.createElement("p");
+            subtitle.style.cssText = "color:#475569;font-size:15px;line-height:1.65;margin:0 0 32px;padding:0 4px;";
+            subtitle.textContent = "Je cr\u00e9e des sites modernes, rapides et s\u00e9curis\u00e9s \u00e0 partir de 500\u20ac";
+
+            // CTA button
+            var cta = document.createElement("a");
+            cta.href = "#contact";
+            cta.style.cssText = "display:inline-block;background:linear-gradient(135deg,#06b6d4,#0891b2);color:#fff;padding:14px 36px;border-radius:12px;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 4px 16px rgba(6,182,212,0.3);transition:transform .2s,box-shadow .2s;";
+            cta.textContent = "Devis gratuit";
+            cta.onmouseenter = function() { this.style.transform = "translateY(-2px)"; this.style.boxShadow = "0 8px 28px rgba(6,182,212,0.4)"; };
+            cta.onmouseleave = function() { this.style.transform = ""; this.style.boxShadow = "0 4px 16px rgba(6,182,212,0.3)"; };
+            cta.onclick = function(e) {
+              e.preventDefault();
+              closePopup("Devis gratuit");
+              setTimeout(function() {
+                var el = document.getElementById("contact");
+                if (el) { el.scrollIntoView({ behavior: "smooth" }); window.location.hash = "contact"; }
+              }, 300);
+            };
+
+            // Dismiss button
+            var dismiss = document.createElement("button");
+            dismiss.style.cssText = "display:block;margin:18px auto 0;background:none;border:none;color:#94a3b8;font-size:13px;cursor:pointer;padding:6px 14px;border-radius:6px;transition:color .2s,background .2s;";
+            dismiss.textContent = "Non merci";
+            dismiss.onmouseenter = function() { this.style.color = "#475569"; this.style.background = "#f8fafc"; };
+            dismiss.onmouseleave = function() { this.style.color = "#94a3b8"; this.style.background = "none"; };
+            dismiss.onclick = function(e) { e.stopPropagation(); closePopup("Non merci"); };
+
+            // Assemble card
+            card.appendChild(closeBtn);
+            card.appendChild(icon);
+            card.appendChild(accentBar);
+            card.appendChild(title);
+            card.appendChild(subtitle);
+            card.appendChild(cta);
+            card.appendChild(dismiss);
+            overlay.appendChild(card);
+
+            // Close on overlay click
+            overlay.onclick = function(e) { if (e.target === overlay) closePopup("Overlay"); };
+
+            // Close on Escape key
+            document.addEventListener("keydown", function escHandler(e) {
+              if (e.key === "Escape") { closePopup("Escape"); document.removeEventListener("keydown", escHandler); }
+            });
+
+            // Prevent body scroll while popup is visible
+            document.body.style.overflow = "hidden";
+            document.body.appendChild(overlay);
+
+            // Animate in (double rAF ensures transition fires)
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                overlay.style.opacity = "1";
+                card.style.opacity = "1";
+                card.style.transform = "translateY(0) scale(1)";
+              });
+            });
           }, 30000);
         `}} />
       </body>
