@@ -3,7 +3,7 @@ title: "De 0 à son premier clic Amazon : combien de temps ça prend vraiment po
 date: "2026-08-03"
 category: "seo-web"
 description: "Le récit honnête de mon premier clic Amazon en 3 jours : les vraies étapes, les vrais chiffres, et ce que j'aurais aimé savoir avant de lancer un site d'affiliation. Ni promesses magiques, ni méthode secrète."
-image: "/blog/og-default.svg"
+image: "/blog/og-premier-clic-amazon-combien-de-temps.png"
 ---
 
 ## La question que tout le monde pose
@@ -49,3 +49,9 @@ Le système complet (générateur d'articles SEO, variantes longue traîne, trac
 👉 [Affiliate Site Machine](https://xixouner3.gumroad.com/l/fsitcb)
 
 *Chiffres réels du lancement du 03/08/2026.*
+---
+
+**📖 À lire aussi :**
+- [Un site d'affiliation qui publie tout seul : la machine](/blog/site-affiliation-qui-publie-tout-seul)
+- [J'ai construit mon propre tracker de clics d'affiliation](/blog/tracker-clics-affiliation-maison)
+- [Passer de 0 à 100 visiteurs par jour sans pub](/blog/passer-de-0-a-100-visiteurs-par-jour-sans-pub)

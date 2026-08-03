@@ -3,7 +3,7 @@ title: "J'ai construit mon propre tracker de clics d'affiliation — voici pourq
 date: "2026-08-03"
 category: "devops-vps"
 description: "Pourquoi j'ai remplacé le dashboard Amazon par mon propre tracker de clics : une redirection /go/ de 50 lignes qui logge chaque clic produit, avec rapport Telegram quotidien. Le code et l'architecture expliqués."
-image: "/blog/og-default.svg"
+image: "/blog/og-tracker-clics-affiliation-maison.png"
 ---
 
 ## Pourquoi j'ai arrêté de dépendre du dashboard Amazon
@@ -79,3 +79,9 @@ On sait en 5 secondes ce qui marche. C'est ce qui permet de produire plus de ce 
 Le tracker fait partie du système complet que j'ai packagé : générateur de site, variantes longue traîne, tracking, pins Pinterest, publication programmée.
 
 👉 [Affiliate Site Machine](https://xixouner3.gumroad.com/l/fsitcb)
+---
+
+**📖 À lire aussi :**
+- [Un site d'affiliation qui publie tout seul : la machine](/blog/site-affiliation-qui-publie-tout-seul)
+- [De 0 à son premier clic Amazon : combien de temps ça prend ?](/blog/premier-clic-amazon-combien-de-temps)
+- [Monter son VPS de A à Z : Docker, Caddy, monitoring](/blog/monter-vps-de-a-a-z-docker-caddy-monitoring)

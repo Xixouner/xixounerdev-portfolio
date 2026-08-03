@@ -3,7 +3,7 @@ title: "Comment j'automatise ma prospection B2B de A à Z : scraper, emails, rel
 date: "2026-08-03"
 category: "dev-web"
 description: "Le pipeline complet que j'utilise pour trouver des prospects, récupérer leurs emails, envoyer des messages personnalisés et relancer automatiquement. 14 prospects contactés en une matinée, zéro saisie manuelle."
-image: "/blog/og-default.svg"
+image: "/blog/og-prospection-b2b-automatisee-de-a-a-z.png"
 ---
 
 ## Le problème : la prospection manuelle est une hémorragie
@@ -60,3 +60,9 @@ J'ai package ce pipeline (scraper Google Maps, enrichisseur d'emails, générate
 👉 [Prospecting Machine](https://xixouner3.gumroad.com/l/igqbaw)
 
 *Pipeline réel utilisé pour la campagne du 03/08/2026. À utiliser dans le respect du RGPD (données professionnelles publiques, désinscription possible).*
+---
+
+**📖 À lire aussi :**
+- [De 0 à son premier clic Amazon : combien de temps ça prend ?](/blog/premier-clic-amazon-combien-de-temps)
+- [Un site d'affiliation qui publie tout seul : la machine](/blog/site-affiliation-qui-publie-tout-seul)
+- [Création site internet pas cher — à partir de 500€](/blog/creation-site-internet-pas-cher)

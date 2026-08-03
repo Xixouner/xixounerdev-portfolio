@@ -3,7 +3,7 @@ title: "J'ai créé un site d'affiliation qui publie 5 articles par jour sans é
 date: "2026-08-03"
 category: "seo-web"
 description: "Comment j'ai automatisé un site d'affiliation Amazon de A à Z : générateur d'articles SEO, variantes longue traîne automatiques, tracking de clics, pins Pinterest. Premier clic Amazon en 3 jours. La machine complète, expliquée avec les vrais chiffres."
-image: "/blog/og-default.svg"
+image: "/blog/og-site-affiliation-qui-publie-tout-seul.png"
 ---
 
 ## Le problème
@@ -52,3 +52,9 @@ J'ai package le système entier dans un produit autonome : générateur de site,
 Pendant que le site se remplissait tout seul, j'ai appliqué la même logique à la prospection : scraper Google Maps, enrichir les emails, envoyer des messages personnalisés, relancer automatiquement. Le résultat est dans un deuxième produit — mais ça, c'est une autre histoire.
 
 *Article écrit à partir de la vraie expérience de mise en production du 03/08/2026 — chiffres réels, pas des projections.*
+---
+
+**📖 À lire aussi :**
+- [De 0 à son premier clic Amazon : combien de temps ça prend ?](/blog/premier-clic-amazon-combien-de-temps)
+- [Comment j'automatise ma prospection B2B de A à Z](/blog/prospection-b2b-automatisee-de-a-a-z)
+- [J'ai construit mon propre tracker de clics d'affiliation](/blog/tracker-clics-affiliation-maison)
