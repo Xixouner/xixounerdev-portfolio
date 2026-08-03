@@ -385,6 +385,65 @@ export default function OffresPage() {
             </div>
           </Reveal>
 
+          {/* ── Section AuditBot ───────────────── */}
+          <Reveal variant="fadeUp" delay={0.1}>
+            <h2 className="mt-24 text-center text-2xl font-bold text-primary">
+              Et en plus : l&apos;audit de sécurité
+            </h2>
+            <p className="mx-auto mt-2 max-w-2xl text-center text-text-light">
+              AuditBot analyse votre site ou votre code en 8 secondes : SSL, headers,
+              secrets exposés, dépendances vulnérables. Score de A+ à F, rapport PDF.
+            </p>
+          </Reveal>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { name: "Gratuit", price: "0 €", desc: "Pour tester", items: ["5 audits / mois", "Score A+ à F", "Rapport complet", "PDF, CSV, JSON"] },
+              { name: "Mini", price: "5 €", desc: "/mois", items: ["100 audits / mois", "IA Mistral", "PDF, CSV, JSON", "API + 7j historique"], highlight: false },
+              { name: "Pro", price: "19 €", desc: "/mois — populaire", items: ["500 audits / mois", "IA Mistral", "PDF, CSV, JSON", "API + 90j historique"], highlight: true },
+              { name: "Business", price: "49 €", desc: "/mois", items: ["2000 audits / mois", "IA Mistral Large", "Historique illimité", "3 comptes"], highlight: false },
+            ].map((t, i) => (
+              <Reveal key={t.name} variant="fadeUp" delay={i * 0.08}>
+                <div
+                  className={
+                    "relative flex h-full flex-col rounded-2xl border bg-white p-7 transition-all duration-300 " +
+                    (t.highlight
+                      ? "border-accent shadow-xl shadow-accent/10 ring-1 ring-accent/30"
+                      : "border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5")
+                  }
+                >
+                  {t.highlight && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent to-accent-light px-3 py-1 text-xs font-bold text-primary-dark">
+                      Recommandé
+                    </span>
+                  )}
+                  <h3 className="text-lg font-bold text-primary">{t.name}</h3>
+                  <p className="mt-2">
+                    <span className="text-2xl font-extrabold text-primary">{t.price}</span>
+                    <span className="block text-xs text-text-muted">{t.desc}</span>
+                  </p>
+                  <ul className="mt-4 flex-1 space-y-2">
+                    {t.items.map((item) => (
+                      <li key={item} className="flex items-start gap-2 text-sm text-text-light">
+                        <CheckCircle size={13} className="mt-0.5 shrink-0 text-accent" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    variant={t.highlight ? "primary" : "secondary"}
+                    size="sm"
+                    className="mt-5 w-full"
+                    asChild
+                  >
+                    <a href="https://auditbot.xixouner.com" target="_blank" rel="noopener noreferrer">
+                      Essayer gratuitement <ArrowRight size={14} />
+                    </a>
+                  </Button>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
           {/* ── FAQ ──────────────────────────────── */}
           <Reveal variant="fadeUp" delay={0.1}>
             <h2 className="mt-24 text-center text-2xl font-bold text-primary">
