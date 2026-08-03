@@ -5,7 +5,9 @@
   <rect width="1200" height="630" fill="url(#g)"/>
   <rect x="60" y="60" width="1080" height="510" rx="24" fill="rgba(255,255,255,0.04)"/>
   <text x="100" y="150" font-family="Arial" font-size="34" font-weight="bold" fill="#06b6d4">XIXOUNERDEV — BLOG</text>
-  <text x="100" y="380" font-family="Arial" font-size="64" font-weight="bold" fill="#ffffff">Tracker de clics
-d'affiliation maison</text>
-  <text x="100" y="460" font-family="Arial" font-size="30" fill="#94a3b8">Développement web · SEO · DevOps — sans bullshit</text>
+  <text x="100" y="330" font-family="Arial" font-size="56" font-weight="bold" fill="#ffffff">
+    <tspan x="100" dy="0">Tracker de clics</tspan>
+    <tspan x="100" dy="66">d'affiliation maison</tspan>
+  </text>
+  <text x="100" y="470" font-family="Arial" font-size="28" fill="#94a3b8">Développement web · SEO · DevOps — sans bullshit</text>
 </svg>
