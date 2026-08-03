@@ -11,6 +11,7 @@ import {
   Rocket,
   ShieldCheck,
   Layers,
+  Minus,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -311,51 +312,74 @@ export default function OffresPage() {
               Formules prêtes à l&apos;emploi
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-center text-text-light">
-              Pas envie de composer ? Voici les combinaisons les plus courantes.
+              Pas envie de composer ? Comparez et choisissez la combinaison qui vous correspond.
             </p>
           </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {packages.map((p, i) => (
-              <Reveal key={p.name} variant="fadeUp" delay={i * 0.08}>
-                <div
-                  className={
-                    "relative flex h-full flex-col rounded-2xl border bg-white p-7 transition-all duration-300 " +
-                    (p.highlight
-                      ? "border-accent shadow-xl shadow-accent/10 ring-1 ring-accent/30"
-                      : "border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5")
-                  }
-                >
-                  {p.highlight && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-accent to-accent-light px-3 py-1 text-xs font-bold text-primary-dark">
-                      Le plus complet
-                    </span>
-                  )}
-                  <p.icon size={28} className="text-accent" />
-                  <h3 className="mt-3 text-lg font-bold text-primary">{p.name}</h3>
-                  <p className="text-xs font-medium uppercase tracking-wide text-text-muted">
-                    {p.target}
-                  </p>
-                  <p className="mt-4">
-                    <span className="text-2xl font-extrabold text-primary">{p.price}</span>
-                    <span className="mt-0.5 block text-xs text-text-muted">{p.period}</span>
-                  </p>
-                  <ul className="mt-4 flex-1 space-y-2">
-                    {p.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-text-light">
-                        <CheckCircle size={13} className="mt-0.5 shrink-0 text-accent" />
-                        {item}
-                      </li>
+          <div className="mt-10 overflow-x-auto rounded-2xl border border-border bg-white">
+            <table className="w-full min-w-[720px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-border bg-surface">
+                  <th className="px-5 py-4 font-semibold text-text-muted">Formule</th>
+                  {packages.map((p) => (
+                    <th key={p.name} className={"px-5 py-4 " + (p.highlight ? "bg-accent/5" : "")}>
+                      <div className="flex flex-col items-start gap-1">
+                        <span className="flex items-center gap-2 font-bold text-primary">
+                          {p.name}
+                          {p.highlight && (
+                            <span className="rounded-full bg-gradient-to-r from-accent to-accent-light px-2 py-0.5 text-[10px] font-bold text-primary-dark">
+                              Le plus complet
+                            </span>
+                          )}
+                        </span>
+                        <span className="text-xs font-normal text-text-muted">{p.target}</span>
+                      </div>
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { label: "Création du site", values: [true, true, false, true] },
+                  { label: "Hébergement pro + domaine", values: [false, true, true, true] },
+                  { label: "Monitoring 24/7 + alertes", values: [false, false, true, true] },
+                  { label: "SSL + sauvegardes auto", values: [false, true, true, true] },
+                  { label: "Support & maintenance", values: [false, true, true, true] },
+                ].map((row) => (
+                  <tr key={row.label} className="border-b border-border/60 last:border-0">
+                    <td className="px-5 py-3.5 font-medium text-primary">{row.label}</td>
+                    {row.values.map((v, i) => (
+                      <td key={i} className={"px-5 py-3.5 text-center " + (packages[i].highlight ? "bg-accent/5" : "")}>
+                        {v ? (
+                          <CheckCircle size={16} className="mx-auto text-accent" aria-label="Inclus" />
+                        ) : (
+                          <Minus size={16} className="mx-auto text-text-muted/40" aria-label="Non inclus" />
+                        )}
+                      </td>
                     ))}
-                  </ul>
-                  <Button
-                    variant={p.highlight ? "primary" : "secondary"}
-                    size="sm"
-                    className="mt-5 w-full"
-                    asChild
-                  >
-                    <Link href="/#contact">Choisir cette formule <ArrowRight size={14} /></Link>
-                  </Button>
-                </div>
+                  </tr>
+                ))}
+                <tr className="bg-surface/60">
+                  <td className="px-5 py-4 font-bold text-primary">Prix</td>
+                  {packages.map((p, i) => (
+                    <td key={p.name} className={"px-5 py-4 text-center " + (p.highlight ? "bg-accent/5" : "")}>
+                      <span className="text-sm font-extrabold text-primary">{p.price}</span>
+                      <span className="block text-xs text-text-muted">{p.period}</span>
+                    </td>
+                  ))}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            {packages.map((p, i) => (
+              <Reveal key={p.name} variant="fadeUp" delay={i * 0.06}>
+                <Button
+                  variant={p.highlight ? "primary" : "secondary"}
+                  size="sm"
+                  asChild
+                >
+                  <Link href="/#contact">Choisir {p.name} <ArrowRight size={13} /></Link>
+                </Button>
               </Reveal>
             ))}
           </div>
