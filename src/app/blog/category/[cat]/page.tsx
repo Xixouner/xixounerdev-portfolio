@@ -8,6 +8,7 @@ import {
 } from "~/lib/blog-data";
 import { BlogCard } from "~/components/blog-card";
 import { CategoryPills } from "~/components/category-pills";
+import { Pagination } from "~/components/pagination";
 import { Reveal } from "~/components/scroll-reveal";
 
 // ── Static generation ──────────────────────────────────────────────────
@@ -52,15 +53,20 @@ export async function generateMetadata({
 // ── Page ────────────────────────────────────────────────────────────────
 export default async function BlogCategoryPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ cat: string }>;
+  searchParams: Promise<{ page?: string }>;
 }) {
   const { cat } = await params;
+  const { page: pageParam } = await searchParams;
+  const page = Math.max(1, parseInt(pageParam || "1", 10) || 1);
   const category = categories.find((c) => c.slug === cat);
   if (!category) notFound();
 
   const posts = await getPostsByCategory(cat as BlogPostFrontmatter["category"]);
-  const pagePosts = posts.slice(0, POSTS_PER_PAGE);
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const pagePosts = posts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   return (
     <>
@@ -120,6 +126,12 @@ export default async function BlogCategoryPage({
           ))}
         </div>
       )}
+      {/* Pagination */}
+      <Pagination
+        page={page}
+        totalPages={totalPages}
+        basePath={`/blog/category/${cat}`}
+      />
     </>
   );
 }

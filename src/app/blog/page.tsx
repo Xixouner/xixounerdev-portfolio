@@ -3,6 +3,7 @@ import { getAllPosts } from "~/lib/markdown";
 import { POSTS_PER_PAGE } from "~/lib/blog-data";
 import { BlogCard } from "~/components/blog-card";
 import { CategoryPills } from "~/components/category-pills";
+import { Pagination } from "~/components/pagination";
 import { Reveal } from "~/components/scroll-reveal";
 
 export const metadata: Metadata = {
@@ -11,9 +12,16 @@ export const metadata: Metadata = {
     "Articles concrets sur le référencement, l'hébergement VPS, le développement web et les technos qui marchent. Par Alexis Trechot, dev freelance à Clermont-Ferrand.",
 };
 
-export default async function BlogPage() {
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page: pageParam } = await searchParams;
+  const page = Math.max(1, parseInt(pageParam || "1", 10) || 1);
   const allPosts = await getAllPosts();
-  const pagePosts = allPosts.slice(0, POSTS_PER_PAGE);
+  const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
+  const pagePosts = allPosts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
 
   return (
     <>
@@ -47,6 +55,9 @@ export default async function BlogPage() {
           ))}
         </div>
       )}
+
+      {/* Pagination */}
+      <Pagination page={page} totalPages={totalPages} basePath="/blog" />
 
       {/* SEO content (cache-cache SEO-friendly) */}
       <section className="mt-20 border-t border-border pt-10">
