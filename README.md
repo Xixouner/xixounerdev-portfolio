@@ -10,7 +10,7 @@ Site one-page portfolio d'Alexis Trechot, développeur fullstack & DevOps freela
 - **Formulaires** : React Hook Form + Zod
 - **Email** : Resend (fallback log-only si pas de clé API)
 - **Icônes** : Lucide React
-- **Tests** : Vitest + @testing-library/react (81 tests)
+- **Tests** : Vitest + @testing-library/react (88 tests)
 
 ## Développement local
 
