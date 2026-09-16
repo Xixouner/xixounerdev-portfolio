@@ -5,12 +5,19 @@ import { Reveal } from "~/components/scroll-reveal";
 import { MapPin, Briefcase, Code, Server } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "À propos — Alexis Trechot, Développeur Web Freelance | XixounerDev",
+  title: "À propos — Alexis Trechot, Développeur Web | XixounerDev",
   description: "Développeur fullstack & DevOps freelance à Clermont-Ferrand. Next.js, Docker, PostgreSQL. Sites sur-mesure dès 500€. Découvrez mon parcours.",
   openGraph: {
     type: "profile", locale: "fr_FR", url: "https://xixouner.com/a-propos", siteName: "XixounerDev",
     title: "À propos — Alexis Trechot, Développeur Freelance",
     description: "Fullstack & DevOps à Clermont-Ferrand. Next.js, Docker, PostgreSQL.",
+    images: [{ url: "https://xixouner.com/og-a-propos.svg", width: 1200, height: 630, alt: "À propos — Alexis Trechot, développeur web freelance" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "À propos — Alexis Trechot, Développeur Freelance",
+    description: "Fullstack & DevOps à Clermont-Ferrand. Next.js, Docker, PostgreSQL.",
+    images: ["https://xixouner.com/og-a-propos.svg"],
   },
   alternates: { canonical: "https://xixouner.com/a-propos" },
 };

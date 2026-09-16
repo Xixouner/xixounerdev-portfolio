@@ -7,13 +7,20 @@ import { Icon } from "~/components/icon";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services — Développement Web, DevOps & Outils sur-mesure | XixounerDev",
+  title: "Services — Dev Web, DevOps & Outils | XixounerDev",
   description:
     "Création de sites web, applications sur-mesure, hébergement DevOps. Des prestations claires, des prix transparents. Développeur freelance à Clermont-Ferrand.",
   openGraph: {
     type: "website", locale: "fr_FR", url: "https://xixouner.com/services", siteName: "XixounerDev",
     title: "Services — Développement Web, DevOps & Outils sur-mesure",
     description: "Sites web, apps métier, hébergement pro : des offres transparentes, des prix justes.",
+    images: [{ url: "https://xixouner.com/og-services.svg", width: 1200, height: 630, alt: "Services — XixounerDev" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services — Développement Web, DevOps & Outils sur-mesure",
+    description: "Sites web, apps métier, hébergement pro : des offres transparentes, des prix justes.",
+    images: ["https://xixouner.com/og-services.svg"],
   },
   alternates: { canonical: "https://xixouner.com/services" },
 };

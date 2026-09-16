@@ -1,10 +1,13 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Politique de confidentialité | XixounerDev — Développeur Web Freelance",
+  title: "Politique de confidentialité | XixounerDev",
   description:
     "Politique de confidentialité du site XixounerDev. Données collectées via formulaire de devis : nom, email, projet, budget. Conforme RGPD. Aucun cookie tracking.",
   robots: { index: true, follow: true },
+  // Canonical auto-référent : sans lui, la page héritait du canonical de
+  // l'accueil (posé dans le layout) et se déclarait copie de la home.
+  alternates: { canonical: "https://xixouner.com/confidentialite" },
 };
 
 export default function Confidentialite() {

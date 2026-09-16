@@ -1,10 +1,13 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Mentions légales | XixounerDev — Développeur Web Freelance Clermont-Ferrand",
+  title: "Mentions légales | XixounerDev",
   description:
     "Mentions légales du site XixounerDev — Alexis Trechot, entrepreneur individuel, développeur web freelance à Clermont-Ferrand. SIRET 999 699 101 00013.",
   robots: { index: true, follow: true },
+  // Canonical auto-référent : sans lui, la page héritait du canonical de
+  // l'accueil (posé dans le layout) et se déclarait copie de la home.
+  alternates: { canonical: "https://xixouner.com/mentions-legales" },
 };
 
 export default function MentionsLegales() {

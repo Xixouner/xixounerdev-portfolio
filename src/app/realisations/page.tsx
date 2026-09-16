@@ -6,12 +6,19 @@ import { Reveal } from "~/components/scroll-reveal";
 import { CheckCircle, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Réalisations — Portfolio Développeur Web Freelance | XixounerDev",
+  title: "Réalisations — Portfolio Dev Web | XixounerDev",
   description: "Découvrez mes projets : sites vitrine, SaaS, applications web. Des vraies réalisations avec des vrais chiffres.",
   openGraph: {
     type: "website", locale: "fr_FR", url: "https://xixouner.com/realisations", siteName: "XixounerDev",
     title: "Réalisations — Portfolio Développeur Web | XixounerDev",
     description: "Sites vitrine, SaaS, apps web : mes projets avec chiffres et résultats.",
+    images: [{ url: "https://xixouner.com/og-realisations.svg", width: 1200, height: 630, alt: "Réalisations — Portfolio XixounerDev" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Réalisations — Portfolio Développeur Web | XixounerDev",
+    description: "Sites vitrine, SaaS, apps web : mes projets avec chiffres et résultats.",
+    images: ["https://xixouner.com/og-realisations.svg"],
   },
   alternates: { canonical: "https://xixouner.com/realisations" },
 };

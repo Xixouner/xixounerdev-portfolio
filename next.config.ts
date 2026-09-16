@@ -16,6 +16,24 @@ const nextConfig: NextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
   },
+  // Les anciennes URLs de pagination /blog?page=N (rendues dynamiques et
+  // non-cachables) redirigent vers les nouveaux segments d'URL /blog/page/N.
+  async redirects() {
+    return [
+      {
+        source: "/blog",
+        has: [{ type: "query", key: "page", value: "1" }],
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog",
+        has: [{ type: "query", key: "page", value: "(?<page>[2-9]\\d*)" }],
+        destination: "/blog/page/:page",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

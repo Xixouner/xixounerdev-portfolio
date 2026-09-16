@@ -6,22 +6,37 @@ import { CategoryPills } from "~/components/category-pills";
 import { Pagination } from "~/components/pagination";
 import { Reveal } from "~/components/scroll-reveal";
 
+// Page 1 du blog — route STATIQUE (aucun `searchParams` lu ici).
+// La pagination vit dans /blog/page/[page] : une route qui lit `searchParams`
+// est rendue dynamiquement par Next, qui impose alors
+// `Cache-Control: private, no-cache, no-store` (PERF-004) ; `revalidate` ne
+// peut rien y changer. D'où la pagination en segments d'URL.
+export const revalidate = 300;
+
+const BASE = "https://xixouner.com/blog";
+
 export const metadata: Metadata = {
   title: "Blog — Conseils SEO, DevOps & Dev Web | XixounerDev",
   description:
     "Articles concrets sur le référencement, l'hébergement VPS, le développement web et les technos qui marchent. Par Alexis Trechot, dev freelance à Clermont-Ferrand.",
+  // canonical auto-référent (retiré du layout.tsx qui le forçait sur la home).
+  alternates: { canonical: BASE },
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: BASE,
+    siteName: "XixounerDev",
+    title: "Blog — Conseils SEO, DevOps & Dev Web | XixounerDev",
+    description:
+      "Articles concrets sur le référencement, l'hébergement VPS, le développement web et les technos qui marchent.",
+    images: [{ url: "https://xixouner.com/og-home.svg", width: 1200, height: 630 }],
+  },
 };
 
-export default async function BlogPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ page?: string }>;
-}) {
-  const { page: pageParam } = await searchParams;
-  const page = Math.max(1, parseInt(pageParam || "1", 10) || 1);
+export default async function BlogPage() {
   const allPosts = await getAllPosts();
   const totalPages = Math.max(1, Math.ceil(allPosts.length / POSTS_PER_PAGE));
-  const pagePosts = allPosts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+  const pagePosts = allPosts.slice(0, POSTS_PER_PAGE);
 
   return (
     <>
@@ -56,8 +71,8 @@ export default async function BlogPage({
         </div>
       )}
 
-      {/* Pagination */}
-      <Pagination page={page} totalPages={totalPages} basePath="/blog" />
+      {/* Pagination — en segments d'URL (/blog/page/2) */}
+      <Pagination page={1} totalPages={totalPages} basePath="/blog" mode="segment" />
 
       {/* SEO content (cache-cache SEO-friendly) */}
       <section className="mt-20 border-t border-border pt-10">

@@ -74,13 +74,12 @@ export const metadata: Metadata = {
     description:
       "Sites sur-mesure dès 500€, rapides, sécurisés, hébergés. Devis gratuit.",
   },
-  alternates: {
-    canonical: "https://xixouner.com",
-    languages: {
-      fr: "https://xixouner.com",
-    },
-  },
+  // PAS de `alternates.canonical` ici : un canonical posé dans un layout
+  // s'applique à TOUTES les pages qui n'en déclarent pas, et leur fait dire
+  // qu'elles sont des copies de l'accueil (mentions légales, confidentialité...).
+  // Chaque page déclare son propre canonical auto-référent.
 };
+
 
 export default function RootLayout({
   children,
@@ -200,49 +199,6 @@ export default function RootLayout({
                   },
                 ],
               },
-            }),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              mainEntity: [
-                {
-                  "@type": "Question",
-                  name: "Quels sont vos tarifs pour la création d'un site web ?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Mes créations de sites web sur-mesure démarrent à partir de 500 € HT. Le prix exact dépend de vos besoins et fait l'objet d'un devis détaillé gratuit après échange.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Quel est le délai pour créer un site internet ?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Je réponds à votre demande sous 24h. Le délai de réalisation dépend de la complexité du projet : de quelques jours pour un site vitrine simple à quelques semaines pour un projet plus ambitieux.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Proposez-vous l'hébergement du site ?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Oui, je gère l'intégralité de l'hébergement sur des serveurs professionnels (Hetzner) avec Docker, certificats SSL, sauvegardes automatiques et monitoring. À partir de 5 € par mois.",
-                  },
-                },
-                {
-                  "@type": "Question",
-                  name: "Où êtes-vous basé ?",
-                  acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Je suis développeur freelance à Clermont-Ferrand et je travaille avec des clients partout en France (TPE, PME, associations, startups).",
-                  },
-                },
-              ],
             }),
           }}
         />

@@ -162,7 +162,7 @@ export function ContactForm() {
             />
             <span className="text-sm text-text-light">
               J&apos;accepte que mes données soient collectées pour traiter ma demande de devis, conformément à la{" "}
-              <Link href="/confidentialite" className="text-accent underline underline-offset-2 hover:text-accent-light" target="_blank">
+              <Link href="/confidentialite" className="text-accent underline underline-offset-2 hover:text-accent-light">
                 politique de confidentialité
               </Link>
               . <span className="text-text-muted">(Obligatoire)</span>

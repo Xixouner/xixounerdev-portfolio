@@ -6,12 +6,27 @@ interface PaginationProps {
   page: number;
   totalPages: number;
   basePath: string; // ex: "/blog" ou "/blog/category/seo-web"
+  /**
+   * "query" (défaut) : /blog?page=2 — la route lit `searchParams`, Next la rend
+   *   dynamiquement et impose `Cache-Control: private, no-store`.
+   * "segment" : /blog/page/2 — route statique (ISR), cache normal et canonical
+   *   auto-référent. C'est le mode utilisé par le blog.
+   */
+  mode?: "query" | "segment";
 }
 
-export function Pagination({ page, totalPages, basePath }: PaginationProps) {
+export function Pagination({
+  page,
+  totalPages,
+  basePath,
+  mode = "query",
+}: PaginationProps) {
   if (totalPages <= 1) return null;
 
-  const pageUrl = (p: number) => (p === 1 ? basePath : `${basePath}?page=${p}`);
+  const pageUrl = (p: number) => {
+    if (p === 1) return basePath;
+    return mode === "segment" ? `${basePath}/page/${p}` : `${basePath}?page=${p}`;
+  };
 
   return (
     <nav

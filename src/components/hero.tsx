@@ -22,7 +22,7 @@ export function Hero() {
           <Reveal variant="scaleIn">
             <div className="relative h-36 w-36 overflow-hidden rounded-full ring-4 ring-accent/20 shadow-xl shadow-accent/5">
               <Image
-                src="/photo_pro.jpg"
+                src="/photo_pro.webp"
                 alt="Alexis Trechot — Développeur Fullstack & DevOps Freelance"
                 fill
                 sizes="144px"
@@ -87,7 +87,7 @@ export function Hero() {
             <Reveal variant="scaleIn" delay={0.2}>
               <div className="relative h-72 w-72 overflow-hidden rounded-2xl ring-1 ring-accent/20 shadow-xl shadow-accent/5">
                 <Image
-                  src="/photo_pro.jpg"
+                  src="/photo_pro.webp"
                   alt="Alexis Trechot — Développeur Fullstack & DevOps Freelance"
                   fill
                   sizes="288px"

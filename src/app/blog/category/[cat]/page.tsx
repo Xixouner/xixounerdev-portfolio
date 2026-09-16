@@ -51,22 +51,20 @@ export async function generateMetadata({
 }
 
 // ── Page ────────────────────────────────────────────────────────────────
+// Pas de `searchParams` ici : aucune catégorie ne dépasse POSTS_PER_PAGE
+// articles, donc la pagination n'existe pas. Lire `searchParams` pousserait
+// la route en rendu dynamique et Next imposerait `no-store` (PERF-004).
 export default async function BlogCategoryPage({
   params,
-  searchParams,
 }: {
   params: Promise<{ cat: string }>;
-  searchParams: Promise<{ page?: string }>;
 }) {
   const { cat } = await params;
-  const { page: pageParam } = await searchParams;
-  const page = Math.max(1, parseInt(pageParam || "1", 10) || 1);
   const category = categories.find((c) => c.slug === cat);
   if (!category) notFound();
 
   const posts = await getPostsByCategory(cat as BlogPostFrontmatter["category"]);
-  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
-  const pagePosts = posts.slice((page - 1) * POSTS_PER_PAGE, page * POSTS_PER_PAGE);
+  const pagePosts = posts.slice(0, POSTS_PER_PAGE);
 
   return (
     <>
@@ -126,12 +124,6 @@ export default async function BlogCategoryPage({
           ))}
         </div>
       )}
-      {/* Pagination */}
-      <Pagination
-        page={page}
-        totalPages={totalPages}
-        basePath={`/blog/category/${cat}`}
-      />
     </>
   );
 }

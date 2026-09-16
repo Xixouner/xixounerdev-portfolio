@@ -15,7 +15,7 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Offres & Tarifs — Sites Web, Hébergement, Monitoring | XixounerDev",
+  title: "Offres & Tarifs — Sites Web, Hébergement | XixounerDev",
   description:
     "Création de site web dès 500 €, hébergement pro 15 €/mois, monitoring 24/7 dès 9 €/mois. Composez votre offre selon votre situation. Sans engagement, mise en place sous 24h.",
   openGraph: {
@@ -26,6 +26,14 @@ export const metadata: Metadata = {
     title: "Offres & Tarifs — Sites Web, Hébergement, Monitoring",
     description:
       "Des offres claires et combinables : création de site, hébergement pro, monitoring 24/7. Un seul interlocuteur, zéro surprise.",
+    images: [{ url: "https://xixouner.com/og-offres.svg", width: 1200, height: 630, alt: "Offres & Tarifs — XixounerDev" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Offres & Tarifs — Sites Web, Hébergement, Monitoring",
+    description:
+      "Des offres claires et combinables : création de site, hébergement pro, monitoring 24/7. Un seul interlocuteur, zéro surprise.",
+    images: ["https://xixouner.com/og-offres.svg"],
   },
   alternates: { canonical: "https://xixouner.com/offres" },
 };
