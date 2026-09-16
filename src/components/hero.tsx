@@ -24,9 +24,9 @@ export function Hero() {
               <Image
                 src="/photo_pro.webp"
                 alt="Alexis Trechot — Développeur Fullstack & DevOps Freelance"
-                fill
-                sizes="144px"
-                className="object-cover"
+                width={144}
+                height={144}
+                className="h-full w-full object-cover"
                 priority
               />
             </div>
@@ -89,9 +89,9 @@ export function Hero() {
                 <Image
                   src="/photo_pro.webp"
                   alt="Alexis Trechot — Développeur Fullstack & DevOps Freelance"
-                  fill
-                  sizes="288px"
-                  className="object-cover"
+                  width={288}
+                  height={288}
+                  className="h-full w-full object-cover"
                   priority
                 />
               </div>

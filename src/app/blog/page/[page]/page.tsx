@@ -33,9 +33,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { page: pageRaw } = await params;
   const page = Math.max(1, parseInt(pageRaw, 10) || 1);
-  const title = `Blog — Conseils SEO, DevOps & Dev Web | XixounerDev`;
+  // Titre et description UNIQUES par page de pagination : sinon /blog et
+  // /blog/page/2 sont deux URLs indexables avec un metadata identique
+  // (META-002 / META-006). Le canonical seul ne suffit pas à l'éviter.
+  const title = `Blog — page ${page} : SEO, DevOps & Dev Web | XixounerDev`;
   const description =
-    "Articles concrets sur le référencement, l'hébergement VPS, le développement web et les technos qui marchent. Par Alexis Trechot, dev freelance à Clermont-Ferrand.";
+    page === 2
+      ? "Page 2 du blog : guides pratiques SEO, hébergement VPS, développement web et automatisation. Des retours de terrain par un dev freelance à Clermont-Ferrand."
+      : `Page ${page} du blog XixounerDev — la suite des articles : SEO, DevOps, développement web et automatisation, racontés par un développeur de terrain.`;
 
   return {
     title,

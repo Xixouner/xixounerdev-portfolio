@@ -38,11 +38,19 @@ export async function generateMetadata({
       siteName: "XixounerDev",
       title: `${category.label} — Blog XixounerDev`,
       description: category.description,
+      images: [
+        {
+          url: "https://xixouner.com/og-home.svg",
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       title: category.label,
       description: category.description,
+      images: ["https://xixouner.com/og-home.svg"],
     },
     alternates: {
       canonical: url,

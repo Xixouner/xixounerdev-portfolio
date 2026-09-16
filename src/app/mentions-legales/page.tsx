@@ -8,6 +8,18 @@ export const metadata = {
   // Canonical auto-référent : sans lui, la page héritait du canonical de
   // l'accueil (posé dans le layout) et se déclarait copie de la home.
   alternates: { canonical: "https://xixouner.com/mentions-legales" },
+  // og:url aligné sur le canonical : hérité du layout il pointait vers
+  // l'accueil, ce qui contredisait le canonical (SOC-003).
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://xixouner.com/mentions-legales",
+    siteName: "XixounerDev",
+    title: "Mentions légales | XixounerDev",
+    description:
+      "Mentions légales de XixounerDev — Alexis Trechot, développeur web freelance à Clermont-Ferrand. Éditeur, hébergeur, propriété intellectuelle et droit applicable.",
+    images: [{ url: "https://xixouner.com/og-home.svg", width: 1200, height: 630 }],
+  },
 };
 
 export default function MentionsLegales() {
@@ -55,17 +67,79 @@ export default function MentionsLegales() {
         </div>
 
         <div>
-          <h2 className="mb-2 text-lg font-semibold text-primary">Hébergement</h2>
-          <p>Hetzner Online GmbH</p>
-          <p>Industriestr. 25, 91710 Gunzenhausen, Allemagne</p>
-          <p>Site web : www.hetzner.com</p>
+          <h2 className="mb-2 text-lg font-semibold text-primary">Hébergeur du site</h2>
+          <p>Hetzner Online GmbH — Industriestr. 25, 91710 Gunzenhausen, Allemagne</p>
+          <p>Téléphone : +49 9831 505-0 — www.hetzner.com</p>
+        </div>
+
+        <div>
+          <h2 className="mb-2 text-lg font-semibold text-primary">Contact</h2>
+          <p>Email : alexistrechot@gmail.com</p>
+          <p>
+            Pour toute question relative au site ou à une prestation, écrivez à
+            cette adresse. Réponse sous 24 à 48 heures ouvrées.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="mb-2 text-lg font-semibold text-primary">Activité et statut fiscal</h2>
+          <p>Activité : développement web et prestations informatiques.</p>
+          <p>
+            Entrepreneur individuel — TVA non applicable, article 293 B du Code
+            général des impôts.
+          </p>
+          <p>Assurance responsabilité civile professionnelle souscrite.</p>
+        </div>
+
+        <div>
+          <h2 className="mb-2 text-lg font-semibold text-primary">Médiation de la consommation</h2>
+          <p>
+            Conformément à l&apos;article L.612-1 du Code de la consommation, le
+            client particulier peut recourir gratuitement à un médiateur de la
+            consommation en vue de la résolution amiable d&apos;un litige, dans un
+            délai d&apos;un an à compter de la réclamation écrite adressée au
+            professionnel.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="mb-2 text-lg font-semibold text-primary">Données personnelles et cookies</h2>
+          <p>
+            Les données transmises via le formulaire de contact sont utilisées
+            uniquement pour répondre à la demande. Aucune donnée n&apos;est cédée à
+            un tiers. Le détail des traitements, des durées de conservation et
+            de vos droits figure dans la{" "}
+            <Link
+              href="/confidentialite"
+              className="text-accent underline underline-offset-2 hover:text-accent-light"
+            >
+              politique de confidentialité
+            </Link>
+            .
+          </p>
+          <p>
+            Ce site n&apos;utilise pas de cookie publicitaire ni de traceur tiers.
+            La mesure d&apos;audience est anonymisée et ne permet pas
+            d&apos;identifier un visiteur.
+          </p>
         </div>
 
         <div>
           <h2 className="mb-2 text-lg font-semibold text-primary">Propriété intellectuelle</h2>
           <p>
-            L&apos;ensemble des éléments de ce site (textes, code source, design) est la propriété exclusive d&apos;Alexis Trechot.
-            Toute reproduction, modification ou exploitation sans autorisation est interdite.
+            L&apos;ensemble des éléments de ce site (textes, code source, design)
+            est la propriété exclusive d&apos;Alexis Trechot. Toute reproduction,
+            modification ou exploitation sans autorisation écrite est
+            interdite.
+          </p>
+        </div>
+
+        <div>
+          <h2 className="mb-2 text-lg font-semibold text-primary">Droit applicable</h2>
+          <p>
+            Le présent site et ses conditions d&apos;utilisation sont soumis au
+            droit français. En cas de litige et à défaut de résolution amiable,
+            les tribunaux français sont seuls compétents.
           </p>
         </div>
       </section>
@@ -81,4 +155,4 @@ export default function MentionsLegales() {
   );
 }
 
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:[{"@type":"ListItem",position:1,name:"Accueil",item:"https://xixouner.com"},{"@type":"ListItem",position:2,name:"Mentions légales",item:"https://xixouner.com/mentions-legales"}]}) }} />
+

@@ -63,6 +63,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  // Pages de pagination du blog : indexables (canonical auto-référent), donc
+  // elles doivent figurer au sitemap (SITEMAP-006).
+  const POSTS_PER_PAGE = 12;
+  const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
+  const pagedRoutes: MetadataRoute.Sitemap = Array.from(
+    { length: Math.max(0, totalPages - 1) },
+    (_, i) => ({
+      url: `https://xixouner.com/blog/page/${i + 2}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    })
+  );
+
   const postRoutes: MetadataRoute.Sitemap = posts.map((post) => ({
     url: `https://xixouner.com/blog/${post.slug}`,
     lastModified: new Date(post.date),
@@ -70,5 +84,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...categoryRoutes, ...postRoutes];
+  return [...staticRoutes, ...categoryRoutes, ...pagedRoutes, ...postRoutes];
 }

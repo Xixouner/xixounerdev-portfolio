@@ -8,6 +8,18 @@ export const metadata = {
   // Canonical auto-référent : sans lui, la page héritait du canonical de
   // l'accueil (posé dans le layout) et se déclarait copie de la home.
   alternates: { canonical: "https://xixouner.com/confidentialite" },
+  // og:url aligné sur le canonical (hérité du layout il pointait vers
+  // l'accueil, ce qui contredisait le canonical — SOC-003).
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    url: "https://xixouner.com/confidentialite",
+    siteName: "XixounerDev",
+    title: "Politique de confidentialité | XixounerDev",
+    description:
+      "Politique de confidentialité de XixounerDev : données collectées, finalités, durées de conservation et exercice de vos droits RGPD.",
+    images: [{ url: "https://xixouner.com/og-home.svg", width: 1200, height: 630 }],
+  },
 };
 
 export default function Confidentialite() {
