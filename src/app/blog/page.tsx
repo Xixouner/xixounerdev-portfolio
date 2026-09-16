@@ -18,7 +18,7 @@ const BASE = "https://xixouner.com/blog";
 export const metadata: Metadata = {
   title: "Blog — Conseils SEO, DevOps & Dev Web | XixounerDev",
   description:
-    "Articles concrets sur le référencement, l'hébergement VPS, le développement web et les technos qui marchent. Par Alexis Trechot, dev freelance à Clermont-Ferrand.",
+    "Articles concrets sur le référencement, l'hébergement VPS et le développement web. Par Alexis Trechot, dev freelance à Clermont-Ferrand.",
   // canonical auto-référent (retiré du layout.tsx qui le forçait sur la home).
   alternates: { canonical: BASE },
   openGraph: {

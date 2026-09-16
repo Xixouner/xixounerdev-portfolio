@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import { Hero } from "~/components/hero";
 import { Difference } from "~/components/difference";
 import { Portfolio } from "~/components/portfolio";
 import { Services } from "~/components/services";
 import { ContactForm } from "~/components/contact-form";
+
+// La home est la seule route qui n'avait AUCUN canonical (le layout le
+// retire volontairement pour ne pas le forcer partout). Une home sans
+// canonical, c'est une home qui peut être indexée en double via
+// /index.html, /?utm_source=... etc. META-008.
+export const metadata: Metadata = {
+  alternates: { canonical: "https://xixouner.com" },
+};
 
 export default function Home() {
   return (

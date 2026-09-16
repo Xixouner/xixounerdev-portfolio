@@ -31,19 +31,19 @@ export const categories: BlogCategory[] = [
     slug: "seo-web",
     label: "SEO & Web",
     description:
-      "Référencement, performance et visibilité en ligne — sans bullshit marketing.",
+      "Référencement, performance et visibilité en ligne — sans bullshit marketing. Guides concrets et retours de terrain par un dev freelance.",
   },
   {
     slug: "devops-vps",
     label: "DevOps / VPS",
     description:
-      "Hébergement pro, Docker, monitoring : tout ce qu'il faut pour dormir tranquille.",
+      "Hébergement pro, Docker, monitoring : tout ce qu'il faut pour dormir tranquille. Guides pas à pas pour héberger ses projets comme un pro.",
   },
   {
     slug: "dev-web",
     label: "Dev Web",
     description:
-      "Technos, frameworks, comparatifs et retours d'expérience d'un dev de terrain.",
+      "Technos, frameworks, comparatifs et retours d'expérience d'un dev de terrain. Ce qui marche, ce qui coûte cher, et pourquoi.",
   },
 ] as const;
 
