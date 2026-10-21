@@ -88,17 +88,20 @@ export default function MentionsLegales() {
             Entrepreneur individuel — TVA non applicable, article 293 B du Code
             général des impôts.
           </p>
-          <p>Assurance responsabilité civile professionnelle souscrite.</p>
         </div>
 
         <div>
-          <h2 className="mb-2 text-lg font-semibold text-primary">Médiation de la consommation</h2>
+          <h2 className="mb-2 text-lg font-semibold text-primary">Conditions générales de vente</h2>
           <p>
-            Conformément à l&apos;article L.612-1 du Code de la consommation, le
-            client particulier peut recourir gratuitement à un médiateur de la
-            consommation en vue de la résolution amiable d&apos;un litige, dans un
-            délai d&apos;un an à compter de la réclamation écrite adressée au
-            professionnel.
+            Les prestations sont régies par les{" "}
+            <Link href="/cgv" className="underline underline-offset-4">
+              conditions générales de vente
+            </Link>
+            . Elles s&apos;appliquent aux clients professionnels ; pour les clients
+            consommateurs, les dispositions impératives du Code de la consommation
+            s&apos;appliquent, notamment le droit de rétractation de 14 jours et le
+            recours gratuit à un médiateur de la consommation (coordonnées
+            communiquées avant toute commande).
           </p>
         </div>
 
