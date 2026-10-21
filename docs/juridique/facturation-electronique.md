@@ -1,31 +1,57 @@
 # Facturation électronique — état et prochaines étapes
 
-> XixounerDev produit déjà des factures au format **Factur-X** : PDF/A-3 avec XML EN 16931 embarqué
-> (`facture-utils.js`). C'est la première brique de la réforme française de la facturation électronique.
+## Où on en est (21/10/2026)
 
-## Ce qui est déjà fait
+- XixounerDev produit déjà des factures **Factur-X** : PDF/A-3 avec XML EN 16931 embarqué
+  (`facture-utils.js`), XML sauvegardé à côté du PDF.
+- Le compte de banque/comptabilité est chez **Indy**. Indy est une **Plateforme Agréée (PA, ex-PDP)**
+  immatriculée par la DGFiP le **09/01/2026** (parmi les 73 premières plateformes sur 149) :
+  périmètre **émission + réception + e-reporting**, accessible aux indépendants, en freemium.
+  Sources : [fiche Indy — Cabinet Digital](https://www.cabinetdigital.fr/plateformes-dematerialisation/indy/),
+  [page Indy facturation électronique](https://www.indy.fr/facturation-electronique/).
 
-- Génération automatique des factures PDF + XML Factur-X à la signature d'un devis.
-- Numérotation séquentielle, mentions TVA 293 B, SIRET.
-- Sauvegarde des factures et des XML.
+## Échéances
 
-## Ce qui manque
-
-- [ ] **Choisir une plateforme agréée (PA / PDP)** pour l'émission et la réception via l'annuaire.
-- [ ] **Se raccorder** et tester un flux complet (émission, réception, statuts de cycle de vie).
-- [ ] **Archiver** les factures électroniques conformément aux obligations (durée 10 ans, format lisible).
-- [ ] Vérifier les échéances applicables à l'activité (réception septembre 2026 ; émission progressive
-      selon la taille — micro-entreprise : 2027, à confirmer sur le calendrier officiel).
-
-## Rappel des échéances (à vérifier avant décision)
-
-| Étape | Échéance indicative |
+| Étape | Échéance |
 |---|---|
-| Réception de factures électroniques obligatoire | septembre 2026 |
+| Réception de factures électroniques obligatoire | **depuis septembre 2026** → à activer sans attendre |
 | Émission — grandes entreprises et ETI | septembre 2026 |
-| Émission — PME et micro-entreprises | septembre 2027 |
+| Émission — PME, TPE et micro-entreprises | **1er septembre 2027** |
 
-## Prochaine action
+Le calendrier officiel doit être revérifié avant décision (les dates ont déjà bougé une fois).
+Source : [Indy — guide facturation électronique](https://www.indy.fr/guide/facturation/electronique/).
 
-Demander des devis à 2–3 plateformes agréées ( ex. : PDP généralistes) et vérifier l'inclusion de
-l'API, du stockage légal et de l'annuaire. Ne pas attendre l'échéance d'émission pour se raccorder.
+## À faire dans Indy (action Alexis)
+
+1. Se connecter à Indy → section **Facturation électronique**.
+2. Vérifier les informations entreprise : SIREN `999699101`, adresse **Clermont-Ferrand**, email.
+3. **Activer la réception** : désigner Indy comme plateforme agréée (mandat) et récupérer l'adresse
+   de réception Annuaire. C'est l'urgence : la réception est obligatoire depuis septembre 2026.
+4. **Tester une réception** : demander une facture électronique de test (Indy ou un fournisseur
+   raccordé) et vérifier qu'elle arrive bien dans Indy avec son XML.
+5. **Émission** : vérifier comment déposer les Factur-X produits par `business-server.js` :
+   import manuel du PDF/XML dans Indy, ou API si disponible. À défaut, émettre les factures
+   directement dans Indy et conserver le PDF interne comme copie de travail.
+6. Configurer l'**e-reporting** si des prestations B2C ou internationales sont facturées.
+7. Archiver les factures électroniques **10 ans** (Indy + copie locale).
+
+## Questions à poser au support Indy
+
+- Existe-t-il une **API** pour déposer une facture Factur-X (PDF + XML) et récupérer les statuts ?
+- Quel est le format d'import accepté (Factur-X PDF/A-3, XML seul) et les limites ?
+- Comment sont gérés les **acomptes**, les **avoirs** et les devis signés ?
+- L'adresse de réception Annuaire est-elle une adresse email dédiée ou un identifiant SIREN ?
+- Le plan gratuit couvre-t-il l'émission et la réception, ou seulement la facturation simple ?
+- Comment prouver la conformité en cas de contrôle (journaux, pistes d'audit) ?
+
+## Décision technique à prendre
+
+Deux options, à trancher après réponse du support :
+
+1. **Indy plateforme d'émission** : les factures sont créées dans Indy ; le PDF interne reste une
+   copie. Simple, mais double saisie possible.
+2. **Factur-X interne + dépôt via Indy** : continuer à générer dans `business-server.js` et déposer
+   le fichier dans Indy (import/API). Moins de rupture, mais dépend de l'API/import.
+
+Tant que l'émission n'est pas raccordée, **ne pas retarder la réception** : c'est l'obligation
+déjà en vigueur.
