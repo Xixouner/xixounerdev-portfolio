@@ -1,6 +1,6 @@
 # Checklist conformité — XixounerDev
 
-> État au 21/10/2026. Documents « vivants », à relire par un juriste avant tout contentieux.
+> État au 21/10/2026 (soir). Documents « vivants », à relire par un juriste avant tout contentieux.
 > CGV opposables : https://xixouner.com/cgv — **v1.1** (B2B uniquement).
 
 ## Fait
@@ -13,9 +13,14 @@
 - [x] **Politique de confidentialité** existante (`/confidentialite`), Matomo sans cookies.
 - [x] **Factur-X** : génération PDF/A-3 + XML EN 16931 déjà en place.
 - [x] **Registre RGPD (brouillon)** : `registre-traitements.md`.
-- [x] **Sous-traitants/DPA** : liste et actions dans `sous-traitants.md`.
 - [x] **Audit prospection** : chiffres et plan dans `prospection-conformite.md`
       + outil `audit-prospection-conformite.js` (lecture seule).
+- [x] **Filtrage grand public** validé par Alexis et **implémenté** dans tous les chemins d'envoi
+      (campagnes, relances, re-split, envois manuels), tests dédiés (45 vérifications).
+- [x] **Analyse d'intérêt légitime (LIA)** rédigée : `lia-prospection.md`.
+- [x] **SPF/DKIM/DMARC vérifiés** : SPF racine + sous-domaine, DKIM Resend, DMARC `p=none` à durcir.
+- [x] **DPA archivés** (versions publiques) : dossier `dpa/` + empreintes SHA-256.
+- [x] **Réception Indy activée** (21/10/2026).
 
 ## À faire — priorités
 
@@ -26,18 +31,18 @@
 
 ### P1 (données personnelles & prospection)
 - [ ] **Registre des traitements** : formaliser le brouillon et le dater.
-- [ ] **DPA / sous-traitants** : archiver les DPA de Resend, Hetzner, Backblaze (**action Alexis** :
-      accès aux comptes fournisseurs) ; vérifier les transferts hors UE (CCT).
+- [x] **DPA archivés** (versions publiques) — [ ] **acceptation dans les comptes fournisseurs**
+      (action Alexis : Resend, Hetzner, Backblaze, GitHub).
 - [ ] **Durées de conservation** : contact 3 ans, prospection 3 ans, facturation 10 ans, logs 6–12 mois.
 - [ ] **Procédure violation de données** : qui prévient la CNIL sous 72 h, modèle de notification.
-- [ ] **Décision prospection** : valider le filtrage des adresses grand public (**5 071 adresses, 47 %**)
-      avant toute reprise des envois ; rédiger le document d'intérêt légitime (LIA).
-- [ ] **SPF/DKIM/DMARC** : vérifier la configuration du domaine d'envoi.
+- [x] **LIA** rédigée ; [ ] validation formelle par Alexis (date à signer).
+- [ ] **DMARC** : passer de `p=none` à `p=quarantine` après 2–4 semaines de surveillance.
+- [ ] **Purge** : supprimer les invalides/bounces et purger à 3 ans.
 
 ### Facturation électronique — Indy
-- [x] **Plateforme identifiée** : **Indy est une Plateforme Agréée** (immatriculée DGFiP le
-      09/01/2026, émission + réception + e-reporting, freemium).
-- [ ] **Activer la réception dans Indy** dès maintenant (obligation en vigueur depuis septembre 2026).
+- [x] **Plateforme identifiée** : Indy, PA immatriculée DGFiP le 09/01/2026 (émission + réception +
+      e-reporting, freemium).
+- [x] **Réception activée** dans Indy (obligation en vigueur depuis septembre 2026).
 - [ ] **Raccordement émission** avant le 1er septembre 2027 : import Factur-X ou API Indy
       (questions au support dans `facturation-electronique.md`).
 - [ ] **Mentions obligatoires** des factures : SIRET, adresse Clermont-Ferrand, TVA 293 B, numéros, dates.
@@ -51,7 +56,7 @@
 
 - **Facturation électronique** : réception obligatoire depuis septembre 2026 ; émission PME/TPE/micro
   au 1er septembre 2027 (calendrier officiel à revérifier).
-- **RGPD** : revue annuelle du registre, des sous-traitants et des durées de conservation.
+- **RGPD** : revue annuelle du registre, des sous-traitants, du LIA et des durées de conservation.
 
 ## Documents de référence
 
@@ -60,6 +65,8 @@
 | CGV publiées | `src/lib/legal-cgv.ts` + page `/cgv` |
 | Registre des traitements (brouillon) | `docs/juridique/registre-traitements.md` |
 | Sous-traitants | `docs/juridique/sous-traitants.md` |
+| DPA archivés | `docs/juridique/dpa/` (index `README.md`) |
 | RC pro | `docs/juridique/rc-pro.md` |
 | Facturation électronique | `docs/juridique/facturation-electronique.md` |
 | Prospection (audit + plan) | `docs/juridique/prospection-conformite.md` |
+| LIA prospection | `docs/juridique/lia-prospection.md` |

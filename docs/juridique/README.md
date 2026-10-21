@@ -8,6 +8,8 @@ Ce dossier rassemble les documents de conformité et les dettes administratives.
 | `registre-traitements.md` | Registre RGPD (article 30) — brouillon à formaliser |
 | `sous-traitants.md` | DPA et transferts (Resend, Hetzner, Backblaze…) |
 | `rc-pro.md` | Checklist et comparatif RC pro |
+| `lia-prospection.md` | Analyse d'intérêt légitime pour la prospection B2B |
+| `dpa/` | DPA archivés (Resend, Hetzner, Backblaze, GitHub) + index |
 | `facturation-electronique.md` | Factur-X, plateformes agréées (Indy PA) et échéances |
 | `prospection-conformite.md` | Audit prospection B2B, politique cible et plan |
 
