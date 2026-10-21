@@ -4,7 +4,7 @@ import { cgvData } from "~/lib/legal-cgv";
 export const metadata = {
   title: "Conditions générales de vente | XixounerDev",
   description:
-    "Conditions générales de vente de XixounerDev : prestations de création de site web, hébergement, maintenance et outils sur mesure. Version 1.0 du 21 octobre 2026.",
+    "Conditions générales de vente de XixounerDev : prestations de création de site web, hébergement, maintenance et outils sur mesure. Prix, paiement, réversibilité et responsabilité.",
   robots: { index: true, follow: true },
   alternates: { canonical: "https://xixouner.com/cgv" },
   openGraph: {
