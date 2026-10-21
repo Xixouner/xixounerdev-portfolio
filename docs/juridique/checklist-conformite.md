@@ -16,20 +16,20 @@
 ### P0 (avant nouveau client à enjeu)
 - [ ] **RC pro** : souscrire (voir `rc-pro.md`). Estimation 15–40 €/mois. En micro-BIC la prime n'est
       pas déductible, mais le coût d'un sinistre l'est encore moins.
-- [ ] **Vérifier l'adresse légale publiée** : le site affiche « Clermont-Ferrand » ; les factures
-      mentionnent « Rue du Chatet, 03500 Saint-Pourcain-sur-Sioule ». Harmoniser (adresse du siège).
+- [x] **Adresse harmonisée (21/10/2026)** : **Clermont-Ferrand** sur le site, dans les CGV et dans
+      les données de facturation (`business-xixouner/data.json`). Les anciennes factures gardent leur
+      adresse d'origine (documents historiques, ne pas modifier).
 - [ ] **Téléphone de contact** : absente des pages légales ; ajouter si on veut rassurer (facultatif).
 
-### P1 (avant toute vente à un consommateur B2C)
-- [ ] **Médiateur de la consommation** : adhérer à un médiateur agréé (CM2C, CNPM, etc.), publier ses
-      coordonnées et le lien vers la plateforme européenne RLL. Tant que ce n'est pas fait, les
-      prestations restent B2B (les CGV le disent explicitement).
-- [ ] **Droit de rétractation 14 jours** : formulaire type à joindre en cas de vente à distance B2C.
+### Non applicable — prestations B2B uniquement (décision Alexis 21/10/2026)
+XixounerDev ne vend pas aux consommateurs : pas de médiateur de la consommation ni de droit de
+rétractation à prévoir. Les CGV et les mentions légales le précisent explicitement (vente réservée
+aux professionnels).
 
 ### P1 (données personnelles)
 - [ ] **Registre des traitements** : formaliser à partir de `registre-traitements.md` (brouillon prêt).
-- [ ] **DPA / sous-traitants** : archiver les DPA de Resend, Hetzner, Backblaze ; vérifier les
-      transferts hors UE (CCT). Liste dans `sous-traitants.md`.
+- [ ] **DPA / sous-traitants** : archiver les DPA de Resend, Hetzner, Backblaze (action Alexis :
+      accès aux comptes fournisseurs) ; vérifier les transferts hors UE (CCT). Liste dans `sous-traitants.md`.
 - [ ] **Durées de conservation** : contact 3 ans, prospection 3 ans, facturation 10 ans, logs 6–12 mois.
 - [ ] **Procédure violation de données** : qui prévient la CNIL sous 72 h, modèle de notification.
 
@@ -39,8 +39,8 @@
 - [ ] Vérifier les mentions obligatoires des factures (SIRET, adresse, TVA 293 B, numéro, dates).
 
 ### P2 (produit / contrats)
-- [ ] **CGU de l'espace outils** (V6) : conditions d'accès, disponibilité, données, résiliation — à écrire
-      avant le premier client pilote.
+- [ ] **CGU de l'espace outils** (V6) : à écrire **quand l'espace outils existera** (rien à publier
+      aujourd'hui, le produit n'est pas encore construit).
 - [ ] **Clause CGV dans les devis** : ajouter la référence + lien CGV dans le devis envoyé et sur la
       page de signature électronique (acceptation explicite).
 - [ ] **Réversibilité** : préciser au devis le format d'export (HTML/MD/images/JSON/CSV) et le délai.

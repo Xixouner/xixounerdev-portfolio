@@ -97,11 +97,8 @@ export default function MentionsLegales() {
             <Link href="/cgv" className="underline underline-offset-4">
               conditions générales de vente
             </Link>
-            . Elles s&apos;appliquent aux clients professionnels ; pour les clients
-            consommateurs, les dispositions impératives du Code de la consommation
-            s&apos;appliquent, notamment le droit de rétractation de 14 jours et le
-            recours gratuit à un médiateur de la consommation (coordonnées
-            communiquées avant toute commande).
+            . Elles sont réservées aux <strong>clients professionnels</strong> :
+            XixounerDev ne traite pas de commandes de consommateurs.
           </p>
         </div>
 

@@ -42,6 +42,11 @@ export default function Cgv() {
           Version {cgvData.version} — mise à jour du {cgvData.updatedAt}
         </p>
 
+        <p className="mb-8 text-sm text-text-muted">
+          <strong>Prestataire :</strong> XixounerDev — Alexis Trechot, entrepreneur individuel,
+          SIRET 999 699 101 00013 — Clermont-Ferrand, France — contact@xixouner.com
+        </p>
+
         <p className="mb-8 text-text-light">{cgvData.intro}</p>
 
         <div className="space-y-8 text-text-light">

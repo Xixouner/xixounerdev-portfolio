@@ -10,15 +10,15 @@ export const cgvData = {
   version: "1.0",
   updatedAt: "21 octobre 2026",
   intro:
-    "Les présentes conditions générales de vente (les « CGV ») régissent les relations contractuelles entre XixounerDev, entrepreneur individuel, et toute personne (le « Client ») qui commande une prestation de création de site web, d'hébergement, de maintenance ou d'outillage web.",
+    "Les présentes conditions générales de vente (les « CGV ») régissent les relations contractuelles entre XixounerDev, entrepreneur individuel établi à Clermont-Ferrand (France), et tout professionnel (le « Client ») qui commande une prestation de création de site web, d'hébergement, de maintenance ou d'outillage web.",
   sections: [
     {
       id: "objet",
       title: "1. Objet et champ d'application",
       paragraphs: [
         "Les présentes CGV s'appliquent à toutes les prestations proposées par XixounerDev : création de sites web, refonte, hébergement, maintenance, développement d'outils sur mesure, audit et conseil.",
-        "Elles sont conclues avec des Clients professionnels (entrepreneurs, associations, sociétés). Toute commande implique l'acceptation sans réserve des présentes CGV, qui prévalent sur les conditions d'achat du Client, sauf accord écrit contraire.",
-        "Pour les Clients consommateurs, les dispositions impératives du Code de la consommation s'appliquent en plus des présentes CGV, notamment le droit de rétractation de 14 jours et le recours gratuit à un médiateur de la consommation dont les coordonnées sont communiquées avant toute commande.",
+        "Les Prestations sont réservées exclusivement aux Clients professionnels : entrepreneurs, sociétés, associations et personnes morales. XixounerDev ne propose pas ses Prestations aux consommateurs au sens du Code de la consommation ; toute commande émanant d'un consommateur est refusée.",
+        "Toute commande implique l'acceptation sans réserve des présentes CGV, qui prévalent sur les conditions d'achat du Client, sauf accord écrit contraire.",
       ],
     },
     {
@@ -145,11 +145,10 @@ export const cgvData = {
     },
     {
       id: "litiges",
-      title: "15. Médiation et règlement des litiges",
+      title: "15. Réclamations et règlement des litiges",
       paragraphs: [
         "Les parties recherchent d'abord une solution amiable à tout différend. Le Client peut adresser une réclamation écrite à contact@xixouner.com ; une réponse est apportée sous 15 jours ouvrés.",
-        "Pour les Clients consommateurs, conformément à l'article L.612-1 du Code de la consommation, le recours gratuit à un médiateur de la consommation est possible dans un délai d'un an à compter de la réclamation écrite. Les coordonnées du médiateur désigné sont communiquées avant toute commande.",
-        "À défaut d'accord amiable, tout litige entre professionnels relève de la compétence des tribunaux du ressort du siège de XixounerDev, sauf disposition légale contraire.",
+        "À défaut d'accord amiable, tout litige relève de la compétence exclusive des tribunaux du ressort du siège de XixounerDev, sauf disposition légale contraire.",
       ],
     },
     {
