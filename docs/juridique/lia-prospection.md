@@ -53,5 +53,5 @@ désinscription simple, conservation limitée). **Le traitement est licite au ti
 ## 6. Validation
 
 - [x] Analyse rédigée le 21/10/2026.
-- [ ] Validée par Alexis (date : ________).
+- [x] **Validée par Alexis le 21/10/2026.**
 - [ ] Revue annuelle / à chaque changement de cible ou de volume.

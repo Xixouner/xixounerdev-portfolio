@@ -17,7 +17,7 @@
 ## Actions
 
 - [x] Archiver les DPA dans un dossier `docs/juridique/dpa/` (PDF) — fait le 21/10/2026.
-- [ ] Faire accepter/signer les DPA dans les comptes fournisseurs (action Alexis).
+- [ ] Faire accepter/signer les DPA dans les comptes fournisseurs (action Alexis) — étapes dans `dpa/ACCEPTATION.md`.
 - [ ] Vérifier les mécanismes de transfert hors UE (CCT) pour Resend et Backblaze.
 - [ ] Mettre à jour cette liste à chaque nouveau service (ex. paiement en ligne, PDP).
 - [ ] Mentionner les sous-traitants dans la politique de confidentialité (déjà listés pour partie).

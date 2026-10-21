@@ -17,10 +17,17 @@
       + outil `audit-prospection-conformite.js` (lecture seule).
 - [x] **Filtrage grand public** validé par Alexis et **implémenté** dans tous les chemins d'envoi
       (campagnes, relances, re-split, envois manuels), tests dédiés (45 vérifications).
-- [x] **Analyse d'intérêt légitime (LIA)** rédigée : `lia-prospection.md`.
-- [x] **SPF/DKIM/DMARC vérifiés** : SPF racine + sous-domaine, DKIM Resend, DMARC `p=none` à durcir.
+- [x] **Analyse d'intérêt légitime (LIA)** rédigée et **validée par Alexis le 21/10** : `lia-prospection.md`.
+- [x] **SPF/DKIM/DMARC vérifiés** : SPF racine + sous-domaine, DKIM Resend, DMARC `p=none`.
+      Plan de durcissement prêt : `dmarc.md`.
 - [x] **DPA archivés** (versions publiques) : dossier `dpa/` + empreintes SHA-256.
+      Guide d'acceptation dans les comptes : `dpa/ACCEPTATION.md`.
 - [x] **Réception Indy activée** (21/10/2026).
+- [x] **Purge RGPD appliquée** : 258 adresses invalides retirées, aucune fiche supprimée
+      (rapport `purge-prospection-20261021.md`).
+- [x] **Miroir SQLite sauvegardé** : `migration/out/crm.sqlite` inclus dans le backup quotidien
+      avec checkpoint WAL (`backup-db.sh`).
+- [x] **Procédure violation de données** : `procedure-violation-donnees.md` (CNIL 72 h + modèles).
 
 ## À faire — priorités
 
@@ -35,9 +42,9 @@
       (action Alexis : Resend, Hetzner, Backblaze, GitHub).
 - [ ] **Durées de conservation** : contact 3 ans, prospection 3 ans, facturation 10 ans, logs 6–12 mois.
 - [ ] **Procédure violation de données** : qui prévient la CNIL sous 72 h, modèle de notification.
-- [x] **LIA** rédigée ; [ ] validation formelle par Alexis (date à signer).
-- [ ] **DMARC** : passer de `p=none` à `p=quarantine` après 2–4 semaines de surveillance.
-- [ ] **Purge** : supprimer les invalides/bounces et purger à 3 ans.
+- [x] **LIA** validée par Alexis le 21/10/2026.
+- [ ] **DMARC** : appliquer le plan `dmarc.md` (quarantine puis reject) — nécessite l'accès DNS.
+- [x] **Purge** invalides/bounces faite (258) ; purge 3 ans : aucune fiche concernée aujourd'hui, script prêt.
 
 ### Facturation électronique — Indy
 - [x] **Plateforme identifiée** : Indy, PA immatriculée DGFiP le 09/01/2026 (émission + réception +
@@ -69,4 +76,7 @@
 | RC pro | `docs/juridique/rc-pro.md` |
 | Facturation électronique | `docs/juridique/facturation-electronique.md` |
 | Prospection (audit + plan) | `docs/juridique/prospection-conformite.md` |
+| Purge RGPD (rapport) | `docs/juridique/purge-prospection-20261021.md` |
+| Procédure violation de données | `docs/juridique/procedure-violation-donnees.md` |
+| Plan DMARC | `docs/juridique/dmarc.md` |
 | LIA prospection | `docs/juridique/lia-prospection.md` |

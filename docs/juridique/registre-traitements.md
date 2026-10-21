@@ -1,6 +1,9 @@
 # Registre des traitements (brouillon)
 
-> Article 30 RGPD. À tenir à jour et à conserver. XixounerDev = Alexis Trechot, EI, SIRET 999 699 101 00013.
+> Article 30 RGPD. **Version 1.0 — 21/10/2026.** Responsable : Alexis Trechot (XixounerDev),
+> SIRET 999 699 101 00013, Clermont-Ferrand. Contact : contact@xixouner.com.
+> Les DPA des sous-traitants sont archivés dans `dpa/` ; la procédure en cas de violation est
+> dans `procedure-violation-donnees.md`.
 
 | # | Traitement | Finalité | Base légale | Données | Personnes | Destinataires / sous-traitants | Conservation | Mesures |
 |---|---|---|---|---|---|---|---|---|
@@ -19,3 +22,15 @@
 - Transferts hors UE : vérifier les clauses contractuelles types et la localisation.
 - Procédure de violation de données : notification CNIL sous 72 h + information des personnes si risque élevé.
 - Registre à réviser une fois par an et à chaque nouveau traitement (ex. espace outils V6).
+
+## Validation
+
+- [x] Registre rédigé le 21/10/2026.
+- [ ] Validé formellement par Alexis (date : ________).
+- [ ] Revue annuelle ou à chaque nouveau traitement.
+
+## Registre des violations de données
+
+| Date | Nature | Données/personnes | Risque | CNIL (date) | Personnes informées | Mesures | Clôturé |
+|---|---|---|---|---|---|---|---|
+| — | Aucune violation connue à ce jour | — | — | — | — | — | — |

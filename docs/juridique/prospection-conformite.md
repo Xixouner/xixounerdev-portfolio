@@ -10,10 +10,10 @@
 | Indicateur | Valeur |
 |---|---|
 | Fiches prospects (actifs + archive) | **10 729** |
-| Fiches avec email | 10 729 |
-| Adresses grand public / personnelles (gmail, orange, free, hotmail…) | **5 082 (47,4 %)** |
+| Fiches avec email | **10 471** |
+| Adresses grand public / personnelles (gmail, orange, free, hotmail…) | **5 059 (48,3 %)** |
 | Désabonnés | 238 |
-| Emails invalides | 258 |
+| Emails invalides marqués (adresses purgées le 21/10) | 258 |
 | Prospects ayant répondu | 6 |
 | Lignes de journal | 70 888 |
 | Envois sur 30 derniers jours | **0 (prospection en pause)** |
@@ -73,11 +73,18 @@ perte : ce sont les seules adresses réellement professionnelles.
 |---|---|---|
 | **P0** | Audit de base reproductible (`audit-prospection-conformite.js`) | ✅ fait |
 | **P0** | Filtrage des adresses grand public avant reprise | ✅ implémenté et testé |
-| **P0** | Analyse d'intérêt légitime (LIA) | ✅ rédigée (`lia-prospection.md`) |
-| **P1** | SPF/DKIM/DMARC vérifiés, DMARC à durcir en `quarantine` | ✅ vérifié / ⏳ durcissement |
-| **P1** | DPA archivés (versions publiques) — acceptation dans les comptes | ✅ archivés / ⏳ comptes |
+| **P0** | Analyse d'intérêt légitime (LIA) | ✅ validée par Alexis le 21/10 (`lia-prospection.md`) |
+| **P1** | SPF/DKIM/DMARC vérifiés ; plan de durcissement prêt (`dmarc.md`) | ✅ vérifié / ⏳ application DNS |
+| **P1** | DPA archivés + guide d'acceptation (`dpa/ACCEPTATION.md`) | ✅ archivés / ⏳ comptes |
 | **P2** | ESP marketing dédié si volume > quelques centaines/mois | ⏳ à arbitrer |
-| **P2** | Purge automatique à 3 ans + suppression des invalides | ⏳ à faire |
+| **P2** | Purge RGPD (invalides + 3 ans) | ✅ appliquée le 21/10 : 258 adresses retirées, 0 fiche > 3 ans (voir `purge-prospection-20261021.md`) |
+
+## Purge RGPD appliquée (21/10/2026)
+
+Dry-run puis application : **258 adresses invalides retirées** (19 actives + 239 archivées),
+aucune fiche supprimée (0 fiche > 3 ans), historique conservé, sauvegarde préalable dans
+`crm-xixouner/backups/avant-purge-rgpd-2026-10-21T20-42-45-110Z/`. Intégrité et comparaison
+JSON ↔ SQLite vérifiées après coup. Détail : `purge-prospection-20261021.md`.
 
 ## Décisions prises le 21/10/2026
 
