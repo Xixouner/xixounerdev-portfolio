@@ -7,7 +7,7 @@ export interface CgvSection {
 
 export const cgvData = {
   title: "Conditions générales de vente",
-  version: "1.0",
+  version: "1.1",
   updatedAt: "21 octobre 2026",
   intro:
     "Les présentes conditions générales de vente (les « CGV ») régissent les relations contractuelles entre XixounerDev, entrepreneur individuel établi à Clermont-Ferrand (France), et tout professionnel (le « Client ») qui commande une prestation de création de site web, d'hébergement, de maintenance ou d'outillage web.",
