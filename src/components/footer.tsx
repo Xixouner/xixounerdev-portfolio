@@ -94,6 +94,10 @@ export function Footer() {
               Mentions légales
             </Link>
             {" · "}
+            <Link href="/cgv" className="underline-offset-4 hover:text-white hover:underline">
+              CGV
+            </Link>
+            {" · "}
             <Link href="/confidentialite" className="underline-offset-4 hover:text-white hover:underline">
               Politique de confidentialité
             </Link>

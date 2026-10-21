@@ -54,6 +54,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    {
+      url: "https://xixouner.com/cgv",
+      lastModified: new Date("2026-10-21"),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   const categoryRoutes: MetadataRoute.Sitemap = categories.map((cat) => ({
