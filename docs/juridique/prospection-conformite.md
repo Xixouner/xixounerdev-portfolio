@@ -92,14 +92,16 @@ Le scraping et tout le cycle de prospection sont **arrêtés** :
 | Maintenance de la base (`nettoyer-prospects.js`) et santé relances (`check-relance-health.js`) | crons commentés |
 
 **Interrupteur global** : le fichier `crm-xixouner/PROSPECTION-EN-PAUSE` bloque toute exécution des
-points d'entrée ci-dessus, même lancée à la main. Les copies de test (bacs à sable) ne sont pas
-concernées.
+points d'entrée ci-dessus, même lancée à la main. Les crons d'envoi/relance/santé restent
+**planifiés mais inertes** (chaque script sort immédiatement) ; les tests qui lancent les scripts de
+prod avec leurs propres bases (`CRM_*_TEST`) ne sont pas bloqués.
 
 **Ce qui continue** : services web, webhooks Resend (désabo, bounces, réponses), synchronisation du
 registre emails, surveillance, sauvegardes, tests, facturation, monitoring.
 
-**Reprise** : supprimer `PROSPECTION-EN-PAUSE`, puis restaurer le crontab sauvegardé dans
-`backups/code-20261021-191619/pause-prospection-*/crontab-avant-pause.txt`.
+**Reprise** : **supprimer `PROSPECTION-EN-PAUSE`** — les crons déjà planifiés reprennent seuls.
+Pour relancer aussi le scraping nocturne, décommenter la ligne `rotation-nuit.sh` du crontab.
+Sauvegardes disponibles dans `backups/code-20261021-191619/pause-*/`.
 
 ## Incident du 22/10/2026 — plainte et pause de la prospection
 

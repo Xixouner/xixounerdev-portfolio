@@ -23,9 +23,9 @@
 - [x] **DPA archivés** (versions publiques) : dossier `dpa/` + empreintes SHA-256.
       Guide d'acceptation dans les comptes : `dpa/ACCEPTATION.md`.
 - [x] **Réception Indy activée** (21/10/2026).
-- [x] **Cycle de prospection EN PAUSE TOTALE depuis le 22/10/2026** : scraping, pipeline, envoi,
-      relances et maintenance arrêtés (crons commentés + fichier `PROSPECTION-EN-PAUSE`). Sauvegarde
-      du crontab. Réactivation après décision explicite.
+- [x] **Cycle de prospection EN PAUSE TOTALE depuis le 22/10/2026** : scraping, pipeline, envoi et
+      relances bloqués par le fichier `PROSPECTION-EN-PAUSE` (crons planifiés mais inertes, garde-fou
+      dans chaque script). Reprise = supprimer le marqueur, après décision explicite.
 - [x] **Demande RGPD traitée** : `registre-demandes-rgpd.md` (référence RGPD-20261022-484).
 - [x] **Purge RGPD appliquée** : 258 adresses invalides retirées, aucune fiche supprimée
       (rapport `purge-prospection-20261021.md`).
