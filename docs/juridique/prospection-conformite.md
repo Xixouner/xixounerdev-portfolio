@@ -79,6 +79,28 @@ perte : ce sont les seules adresses réellement professionnelles.
 | **P2** | ESP marketing dédié si volume > quelques centaines/mois | ⏳ à arbitrer |
 | **P2** | Purge RGPD (invalides + 3 ans) | ✅ appliquée le 21/10 : 258 adresses retirées, 0 fiche > 3 ans (voir `purge-prospection-20261021.md`) |
 
+## Pause TOTALE du cycle (22/10/2026, décision Alexis)
+
+Le scraping et tout le cycle de prospection sont **arrêtés** :
+
+| Arrêté | Comment |
+|---|---|
+| Scraping massif et rotation (`rotation-nuit.sh`, `campagne-nuit.sh`, `auto-enchainement.sh`) | crons commentés + garde-fou dans les scripts |
+| Pipeline post-scraping (`pipeline-auto.sh`) | garde-fou |
+| Envoi des campagnes (`envoi-attente.sh`) | cron commenté + garde-fou |
+| Relances automatiques (`relance-auto.js`) | cron commenté + garde-fou |
+| Maintenance de la base (`nettoyer-prospects.js`) et santé relances (`check-relance-health.js`) | crons commentés |
+
+**Interrupteur global** : le fichier `crm-xixouner/PROSPECTION-EN-PAUSE` bloque toute exécution des
+points d'entrée ci-dessus, même lancée à la main. Les copies de test (bacs à sable) ne sont pas
+concernées.
+
+**Ce qui continue** : services web, webhooks Resend (désabo, bounces, réponses), synchronisation du
+registre emails, surveillance, sauvegardes, tests, facturation, monitoring.
+
+**Reprise** : supprimer `PROSPECTION-EN-PAUSE`, puis restaurer le crontab sauvegardé dans
+`backups/code-20261021-191619/pause-prospection-*/crontab-avant-pause.txt`.
+
 ## Incident du 22/10/2026 — plainte et pause de la prospection
 
 Une personne (`s***@gmail.com`) a demandé l'arrêt des envois et la suppression de son adresse,
