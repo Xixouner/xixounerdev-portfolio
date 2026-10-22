@@ -23,6 +23,9 @@
 - [x] **DPA archivés** (versions publiques) : dossier `dpa/` + empreintes SHA-256.
       Guide d'acceptation dans les comptes : `dpa/ACCEPTATION.md`.
 - [x] **Réception Indy activée** (21/10/2026).
+- [x] **Prospection en pause depuis le 22/10/2026** (plainte RGPD traitée ; crons d'envoi commentés,
+      sauvegarde crontab). Réactivation après validation.
+- [x] **Demande RGPD traitée** : `registre-demandes-rgpd.md` (référence RGPD-20261022-484).
 - [x] **Purge RGPD appliquée** : 258 adresses invalides retirées, aucune fiche supprimée
       (rapport `purge-prospection-20261021.md`).
 - [x] **Miroir SQLite sauvegardé** : `migration/out/crm.sqlite` inclus dans le backup quotidien
@@ -45,6 +48,7 @@
 - [x] **LIA** validée par Alexis le 21/10/2026.
 - [ ] **DMARC** : appliquer le plan `dmarc.md` (quarantine puis reject) — nécessite l'accès DNS.
 - [x] **Purge** invalides/bounces faite (258) ; purge 3 ans : aucune fiche concernée aujourd'hui, script prêt.
+- [ ] **Décider de la reprise** de la prospection après validation (volume réel : 36 770 envois/30 j).
 
 ### Facturation électronique — Indy
 - [x] **Plateforme identifiée** : Indy, PA immatriculée DGFiP le 09/01/2026 (émission + réception +
@@ -77,6 +81,7 @@
 | Facturation électronique | `docs/juridique/facturation-electronique.md` |
 | Prospection (audit + plan) | `docs/juridique/prospection-conformite.md` |
 | Purge RGPD (rapport) | `docs/juridique/purge-prospection-20261021.md` |
+| Demandes RGPD | `docs/juridique/registre-demandes-rgpd.md` |
 | Procédure violation de données | `docs/juridique/procedure-violation-donnees.md` |
 | Plan DMARC | `docs/juridique/dmarc.md` |
 | LIA prospection | `docs/juridique/lia-prospection.md` |

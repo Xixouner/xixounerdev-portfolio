@@ -14,6 +14,7 @@ Ce dossier rassemble les documents de conformité et les dettes administratives.
 | `prospection-conformite.md` | Audit prospection B2B, politique cible et plan |
 | `lia-prospection.md` | Analyse d'intérêt légitime B2B (validée 21/10/2026) |
 | `purge-prospection-20261021.md` | Rapport de la purge RGPD du 21/10/2026 |
+| `registre-demandes-rgpd.md` | Demandes d'opposition/effacement traitées |
 | `procedure-violation-donnees.md` | Procédure CNIL 72 h et modèles de notification |
 | `dmarc.md` | Plan de durcissement DMARC (quarantine puis reject) |
 | `dpa/` | DPA archivés + guide d'acceptation |

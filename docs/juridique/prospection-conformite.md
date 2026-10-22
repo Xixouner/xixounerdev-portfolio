@@ -10,13 +10,13 @@
 | Indicateur | Valeur |
 |---|---|
 | Fiches prospects (actifs + archive) | **10 729** |
-| Fiches avec email | **10 471** |
-| Adresses grand public / personnelles (gmail, orange, free, hotmail…) | **5 059 (48,3 %)** |
+| Fiches avec email | **10 470** |
+| Adresses grand public / personnelles (gmail, orange, free, hotmail…) | **5 058 (48,3 %)** |
 | Désabonnés | 238 |
-| Emails invalides marqués (adresses purgées le 21/10) | 258 |
+| Emails invalides marqués (adresses purgées le 21/10) | 259 |
 | Prospects ayant répondu | 6 |
 | Lignes de journal | 70 888 |
-| Envois sur 30 derniers jours | **0 (prospection en pause)** |
+| Envois sur 30 derniers jours | **36 770** (50 137 sur 90 j) |
 | Oppositions/désabos journalisés | 325 |
 | Campagnes (fichiers de campagne) | 14 (dont 9 closes, 0 en pause) |
 
@@ -78,6 +78,23 @@ perte : ce sont les seules adresses réellement professionnelles.
 | **P1** | DPA archivés + guide d'acceptation (`dpa/ACCEPTATION.md`) | ✅ archivés / ⏳ comptes |
 | **P2** | ESP marketing dédié si volume > quelques centaines/mois | ⏳ à arbitrer |
 | **P2** | Purge RGPD (invalides + 3 ans) | ✅ appliquée le 21/10 : 258 adresses retirées, 0 fiche > 3 ans (voir `purge-prospection-20261021.md`) |
+
+## Incident du 22/10/2026 — plainte et pause de la prospection
+
+Une personne (`s***@gmail.com`) a demandé l'arrêt des envois et la suppression de son adresse,
+après **3 contacts** (email du 10/10, relances des 13/10 et 21/10). Traitement immédiat :
+
+- suppression RGPD exécutée (**référence `RGPD-20261022-484`**) : email vidé de la fiche, adresse
+  inscrite dans `no-contact.json`, historique neutralisé, attestation PDF générée ;
+- vérifications : `estExclu()` vrai, `estCibleProspection()` faux, relances bloquées ;
+- **prospection mise en pause le 22/10/2026 à 07:06** : crons `relance-auto.js --send` et
+  `envoi-attente.sh` commentés (sauvegarde du crontab dans
+  `backups/code-20261021-191619/pause-prospection-20261022-070652/`). Réactivation après validation.
+
+L'audit a aussi révélé que le volume était **très supérieur à ce qui était affiché** : le champ
+`date` du journal n'existait pas (c'est `ts`), donc l'outil annonçait « 0 envoi » alors que
+**36 770 emails/relances ont été envoyés sur 30 jours** (50 137 sur 90 jours). L'outil est corrigé ;
+la prospection reste en pause jusqu'à une décision explicite.
 
 ## Purge RGPD appliquée (21/10/2026)
 
